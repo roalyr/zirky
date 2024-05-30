@@ -1,10 +1,9 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/Environment/Stellar_objects/Clusters/Moirai_Cluster_Zone/Systems/_STAR_A9_3_SYSTEM_ZONE.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Environment/Stellar_objects/Clusters/Moirai_Cluster_Zone/Systems/STAR_B7_0_SYSTEM_ZONE/STAR_B7_0_SYSTEM_ZONE.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Origin_rebase/Rebase_global.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Environment/Stellar_objects/Clusters/Nebula_global/STAR_4_SYSTEM_ZONE/STAR_4_SYSTEM_ZONE.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Editor_scenes/_EDITOR_OBJECTS_.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Environment/Stellar_objects/Cloud_global.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Environment/Stellar_objects/Nebula_green_red.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Environment/Stellar_objects/Clusters/Moirai_Cluster_Zone/Systems/STAR_A7_1_SYSTEM_ZONE/STAR_A7_1_SYSTEM_ZONE.tscn" type="PackedScene" id=8]
@@ -26,8 +25,6 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="_EDITOR OBJECTS_" parent="." instance=ExtResource( 5 )]
-
 [node name="Nebula_global" parent="." instance=ExtResource( 6 )]
 __meta__ = {
 "_edit_lock_": true
@@ -35,6 +32,7 @@ __meta__ = {
 
 [node name="Fake_stars" type="Position3D" parent="Nebula_global"]
 transform = Transform( 0.113417, 0.0465323, -0.0731705, -0.0318948, 0.134411, 0.0360399, 0.0806343, -0.0122842, 0.117174, 1.87264e+17, 6.72165e+16, -3.53759e+16 )
+visible = false
 script = ExtResource( 16 )
 
 [node name="Star_placeholders_B" parent="Nebula_global/Fake_stars" instance=ExtResource( 11 )]
@@ -69,6 +67,7 @@ transform = Transform( 6.7812, -2.86268, -1.91984, -0.778839, 2.85477, -7.00779,
 
 [node name="Fake_stars2" type="Position3D" parent="Nebula_global"]
 transform = Transform( -0.00472497, 0.143778, -0.00291353, -0.142416, -0.00508264, -0.019866, -0.0199539, 0.00223139, 0.142477, -5.97139e+17, -2.87685e+17, -7.71908e+17 )
+visible = false
 script = ExtResource( 16 )
 
 [node name="Star_placeholders_B" parent="Nebula_global/Fake_stars2" instance=ExtResource( 11 )]
@@ -103,6 +102,7 @@ transform = Transform( 6.7812, -2.86268, -1.91984, -0.778839, 2.85477, -7.00779,
 
 [node name="Fake_stars3" type="Position3D" parent="Nebula_global"]
 transform = Transform( -0.0718663, -0.0356266, -0.0744869, 0.0784716, -0.0601892, -0.0469229, -0.025685, -0.084204, 0.065056, -6.88811e+17, 2.86599e+17, 8.29655e+17 )
+visible = false
 script = ExtResource( 16 )
 
 [node name="Star_placeholders_B" parent="Nebula_global/Fake_stars3" instance=ExtResource( 11 )]
