@@ -1,0 +1,51 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scripts/UI/UI.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/UI/Translations.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/UI/GUI_touchscreen/GUI_touchscreen.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/UI/GUI_desktop/GUI_desktop.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/UI/UI_functions.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/UI/GUI_windows/Touchscreen/Touchscreen_pad.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/UI/GUI_windows/Common/Readouts.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/UI/GUI_windows/Common/Targeting.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/UI/GUI_windows/Touchscreen/_Touchscreen_throttle.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/UI/GUI_common/Prompts_menus/GUI_options.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scripts/UI/Common/Debug.gd" type="Script" id=15]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="UI_functions" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="Common" type="Node" parent="."]
+
+[node name="Readouts" type="Node" parent="Common"]
+script = ExtResource( 10 )
+
+[node name="Targeting" type="Node" parent="Common"]
+script = ExtResource( 11 )
+
+[node name="Touchscreen_pad" type="Node" parent="Common"]
+script = ExtResource( 9 )
+
+[node name="Touchscreen_throttle" type="Node" parent="Common"]
+script = ExtResource( 13 )
+
+[node name="Debug" type="Node" parent="Common"]
+script = ExtResource( 15 )
+
+[node name="Translations" type="Node" parent="Common"]
+script = ExtResource( 2 )
+
+[node name="GUI_desktop" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="GUI_touchscreen" parent="." instance=ExtResource( 3 )]
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="GUI_options" parent="." instance=ExtResource( 14 )]
+visible = false
