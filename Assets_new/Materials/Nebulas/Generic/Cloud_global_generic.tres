@@ -1,0 +1,56 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=2]
+
+[ext_resource path="res://Assets_new/Shaders/Nebula/Global_cloud_main.gdshader" type="Shader" id=1]
+[ext_resource path="res://Assets_new/Materials/Nebulas/Generic/Cloud_global_out_generic.tres" type="Material" id=2]
+
+[sub_resource type="OpenSimplexNoise" id=123]
+
+[sub_resource type="NoiseTexture" id=124]
+seamless = true
+noise = SubResource( 123 )
+
+[sub_resource type="OpenSimplexNoise" id=125]
+octaves = 4
+period = 60.9
+persistence = 0.475
+
+[sub_resource type="NoiseTexture" id=126]
+seamless = true
+as_normalmap = true
+bump_strength = 17.4
+noise = SubResource( 125 )
+
+[resource]
+next_pass = ExtResource( 2 )
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 0.101961, 1, 0, 1 )
+shader_param/albedo_glow_near = Color( 0.0352941, 0, 0.305882, 1 )
+shader_param/albedo_detail_distant = Color( 1, 0, 0, 1 )
+shader_param/albedo_fog = Color( 0.101961, 0, 1, 1 )
+shader_param/normal_detail_factor = 2.369
+shader_param/distant_detail_phase = 2.315
+shader_param/distant_detail_factor = 0.765
+shader_param/distant_detail_strength = 2.03
+shader_param/fade_albedo = 2e+18
+shader_param/fade_albedo_near = 8e+17
+shader_param/fade_discard_near = 1e+18
+shader_param/fade_fog = 1e+19
+shader_param/rim_strength = 0.885
+shader_param/rim_exponent = 1.0
+shader_param/color_power_r = 1.0
+shader_param/color_power_g = 1.0
+shader_param/color_power_b = 1.0
+shader_param/color_multiplier_r = 1.0
+shader_param/color_multiplier_g = 1.0
+shader_param/color_multiplier_b = 1.0
+shader_param/dither_equal_strength = 0.5
+shader_param/dither_noise_strength = 0.0
+shader_param/dither_main_power = 1.0
+shader_param/dither_threshold = 1.0
+shader_param/dither_detail_contrast = 1.0
+shader_param/dither_darken = 0.5
+shader_param/uv1_blend_sharpness = 10.0
+shader_param/uv1_scale = 1.0
+shader_param/uv1_offset = null
+shader_param/distant_detail_noise = SubResource( 124 )
+shader_param/normal_detail_minor_noise = SubResource( 126 )

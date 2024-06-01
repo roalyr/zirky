@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Shaders/Lights/Light_distant_sprite.gdshader" type="Shader" id=1]
+[ext_resource path="res://Assets_new/Shaders/Light/Light_distant_sprite.gdshader" type="Shader" id=1]
 
 [sub_resource type="SpatialMaterial" id=4]
 vertex_color_use_as_albedo = true
@@ -23,11 +23,11 @@ surfaces/0 = {
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 1 )
 shader_param/albedo = Color( 0.458824, 0.882353, 1, 1 )
-shader_param/scale = 1.0
+shader_param/scale = 0.058
+shader_param/attenuation = 0.22
 shader_param/flare_distance = 2.25e+11
 shader_param/flare_size = 2.0
-shader_param/attenuation = 0.22
-shader_param/intensity = 0.5
+shader_param/intensity = 0.213
 shader_param/exponent = 5.0
 shader_param/pulse_factor = 0.958
 shader_param/pulse_rate = 3.038

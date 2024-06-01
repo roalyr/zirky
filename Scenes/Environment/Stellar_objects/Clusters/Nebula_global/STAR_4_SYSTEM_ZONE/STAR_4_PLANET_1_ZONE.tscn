@@ -1,7 +1,7 @@
 [gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Assets/Models/Shapes/UV_sphere/Sphere_LOD2.glb" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Shaders/Lights/Light_distant_sprite.gdshader" type="Shader" id=2]
+[ext_resource path="res://Assets_new/Shaders/Light/Light_distant_sprite.gdshader" type="Shader" id=2]
 [ext_resource path="res://Assets/Models/Shapes/UV_sphere/Sphere_LOD0.glb" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Models/Shapes/UV_sphere/Sphere_LOD1.glb" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Zones/LODs_zones/LODs_trigger.gd" type="Script" id=5]

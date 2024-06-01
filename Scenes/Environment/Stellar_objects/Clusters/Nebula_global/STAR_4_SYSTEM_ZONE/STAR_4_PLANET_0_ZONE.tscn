@@ -25,7 +25,7 @@
 [ext_resource path="res://Assets/Textures/Decals/Craters/Textures_512/small_impact/Craters_447_small_impact.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Textures/Decals/Craters/Textures_512/flat/Craters_387_flat.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Textures/Decals/Craters/Textures_512/multi/Craters_317_multi.png" type="Texture" id=25]
-[ext_resource path="res://Assets/Shaders/Lights/Light_distant_sprite.gdshader" type="Shader" id=27]
+[ext_resource path="res://Assets_new/Shaders/Light/Light_distant_sprite.gdshader" type="Shader" id=27]
 [ext_resource path="res://Assets/Models/Sprites/Solar_sprite.glb" type="PackedScene" id=28]
 [ext_resource path="res://Assets/Models/Shapes/Icosphere/Icosphere_LOD0.glb" type="PackedScene" id=29]
 
