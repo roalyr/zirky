@@ -68,7 +68,7 @@ void vertex() {
 
     // Transform the vertex position to clip space
     vec4 clip_position = PROJECTION_MATRIX * INV_CAMERA_MATRIX * WORLD_MATRIX * vec4(VERTEX, 1.0);
-	float x_offset = clip_position.x / clip_position.w;
+	float x_offset = abs(clip_position.x / clip_position.w);
 
 	float ratio = VIEWPORT_SIZE.x/VIEWPORT_SIZE.y;
 	float distance_to_center_x = pow(x_offset, beam_width_power)*beam_width_focus;

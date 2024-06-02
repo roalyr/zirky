@@ -71,7 +71,6 @@ material_override = ExtResource( 6 )
 transform = Transform( 6.63e+08, 0, 0, 0, 6.63e+08, 0, 0, 0, 6.63e+08, 0, 0, 0 )
 
 [node name="LOD0" type="Spatial" parent="Scenes/STAR_0/Model_663000000"]
-visible = false
 lod_range = 1e+10
 
 [node name="Surface" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD0"]
@@ -117,6 +116,7 @@ mesh = SubResource( 99 )
 skeleton = NodePath("../..")
 
 [node name="LOD2" type="Spatial" parent="Scenes/STAR_0/Model_663000000"]
+visible = false
 
 [node name="Halo_directional" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD2"]
 material_override = ExtResource( 4 )
