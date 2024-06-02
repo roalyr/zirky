@@ -41,10 +41,12 @@ func _on_Button_ekill_pressed():
 	Signals.emit_signal("sig_engine_kill")
 	
 func _on_Button_hide_ui_pressed():
-	ui_paths.desktop_gui.modulate.a = GameState.ui_alpha
-	GameState.ui_alpha -= 0.25
+	
+	GameState.ui_alpha -= 0.5
 	if GameState.ui_alpha < 0.0:
 		GameState.ui_alpha = 1.0
+		
+	ui_paths.desktop_gui.modulate.a = GameState.ui_alpha
 
 
 # DESKTOP / MOBILE GUI

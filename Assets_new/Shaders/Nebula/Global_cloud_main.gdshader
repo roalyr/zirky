@@ -6,7 +6,7 @@ render_mode
 
 	// Blending and culling.
 	blend_mix,
-	cull_front,
+	cull_back,
 
 	unshaded,
 	diffuse_lambert,
@@ -18,6 +18,7 @@ render_mode
 
 uniform vec4 albedo : hint_color;
 uniform vec4 albedo_glow_near : hint_color;
+uniform vec4 albedo_detail_near : hint_color;
 uniform vec4 albedo_detail_distant : hint_color;
 uniform vec4 albedo_fog : hint_color;
 
@@ -27,13 +28,19 @@ uniform sampler2D distant_detail_noise;
 uniform sampler2D normal_detail_minor_noise;
 
 uniform float normal_detail_factor = 1.0;
+uniform float normal_detail_power = 1.0;
+uniform float normal_detail_rim_strength = 1.0;
+uniform float normal_detail_rim_exponent : hint_range(0.0, 10.0) = 1.0;
+uniform float normal_detail_uv1_scale = 1.0;
+uniform vec3 normal_detail_uv1_offset = vec3(0.0);
 
 uniform float distant_detail_phase = 1.0;
 uniform float distant_detail_factor = 1.0;
 uniform float distant_detail_strength = 1.0;
 
 
-uniform float fade_albedo = 0;
+uniform float fade_detail_distant = 0;
+uniform float fade_detail_near = 0;
 uniform float fade_albedo_near = 0;
 uniform float fade_discard_near = 0;
 uniform float fade_fog = 0;
@@ -101,9 +108,10 @@ const mat4 bayer_array2 = mat4(
 const float pi = 3.1415926535;
 
 varying vec3 uv1_triplanar_pos;
+varying vec3 normal_detail_uv1_triplanar_pos;
 uniform float uv1_blend_sharpness = 10.0;
 varying vec3 uv1_power_normal;
-uniform float uv1_scale = 100.0;
+uniform float uv1_scale = 1.0;
 uniform vec3 uv1_offset;
 
 vec3 interleaved_gradient_noise(vec2 frag_coord) {
@@ -124,7 +132,8 @@ void vertex() {
 	BINORMAL+= vec3(0.0,1.0,0.0) * abs(normal.z);
 	BINORMAL = normalize(BINORMAL);
 	uv1_power_normal=pow(abs(NORMAL),vec3(uv1_blend_sharpness));
-	uv1_triplanar_pos = VERTEX * pow(2.0, uv1_scale) + uv1_offset*1e-2;
+	uv1_triplanar_pos = VERTEX * pow(2.0, uv1_scale) + uv1_offset;
+	normal_detail_uv1_triplanar_pos = VERTEX * pow(2.0, normal_detail_uv1_scale) + normal_detail_uv1_offset;
 	uv1_power_normal/=dot(uv1_power_normal,vec3(1.0));
 	uv1_triplanar_pos *= vec3(1.0,-1.0, 1.0);
 
@@ -153,7 +162,10 @@ void fragment()
 
 	// Get texture data.
 	// Normal textures.
-	vec4 nm_detail_minor_noise = triplanar_texture(normal_detail_minor_noise,uv1_power_normal,uv1_triplanar_pos);
+	vec4 nm_detail_minor_noise = triplanar_texture(
+		normal_detail_minor_noise,
+		uv1_power_normal,
+		normal_detail_uv1_triplanar_pos);
 		// Transform the RGB values of the normal map to the range [-1, 1].
 	vec3 nm_detail_minor_noise_normalized = normalize(nm_detail_minor_noise.rgb * 2.0 - 1.0);
 		// Transform normal map normal from tangent space to view space.
@@ -169,24 +181,21 @@ void fragment()
 
 	// Attenuate the dot product.
 	float rim_detail_distant = clamp(pow(dt_distant_detail, rim_exponent)*rim_strength, 1e-6, 1.0);
-	float rim_normal_detail_minor = clamp(pow(dt_normal_detail_minor, rim_exponent)*rim_strength, 1e-6, 1.0);
+	float rim_normal_detail_minor = clamp(pow(dt_normal_detail_minor, normal_detail_rim_exponent)*normal_detail_rim_strength, 1e-6, 1.0);
 
-	// fade_albedo distances.
+	// fade distances.
 	float dist = length(VERTEX);
-	float fd_albedo = 1.0-clamp(smoothstep(0.0, fade_albedo, dist), 1e-6, 1.0); // fades out
+	float fd_detail_distant = 1.0-clamp(smoothstep(0.0, fade_detail_distant, dist), 1e-6, 1.0); // fades out
 	float fd_albedo_near = 1.0-clamp(smoothstep(0.0, fade_albedo_near, dist), 1e-6, 1.0); // fades out
 	float fd_discard = 1.0-clamp(smoothstep(0.0, fade_discard_near, dist), 1e-6, 1.0); // fades out
 	float fd_fog = 1.0-clamp(smoothstep(0.0, fade_fog, dist), 1e-6, 1.0); // fades out
 
-	// Main color. Adjusted by noise maps.
-	ALBEDO = albedo.rgb * COLOR.rgb *rim_normal_detail_minor*normal_detail_factor
-		;
+	// Main color
+	ALBEDO = albedo.rgb * COLOR.rgb * (1.0-fd_albedo_near) 
+		* pow(rim_normal_detail_minor * normal_detail_factor, normal_detail_power);
 
-	// Near field.
-	ALBEDO += albedo_glow_near.rgb*(fd_albedo_near);
-
-	// Details field.
-	ALBEDO += albedo_detail_distant.rgb*(1.0-fd_albedo) * COLOR.rgb
+	// Details distant.
+	ALBEDO += albedo_detail_distant.rgb*(1.0-fd_detail_distant) * COLOR.rgb
 		* pow((1.0-rim_detail_distant), distant_detail_factor)
 		* distant_detail_strength
 		;
@@ -232,7 +241,7 @@ void fragment()
     float dither_noise_value = clamp(fract(sin(dot(SCREEN_UV + VIEW.xy*5e-2, vec2(12.9898, 5648.233))) * 43758.5453), 0.0, 1.0);
 
 	float dither_main = pow((bayer_value), dither_main_power) + dither_noise_strength*dither_noise_value;
-	float near_alpha = 1.0/fd_discard - dither_detail_contrast*rim_normal_detail_minor + dither_detail_contrast*rim_detail_distant;
+	float near_alpha = 1.0/fd_discard - dither_detail_contrast + dither_detail_contrast*rim_detail_distant;
 
 	ALPHA_SCISSOR = dither_threshold + dither_main + dither_equal_strength*(dither_equal + dither_equal2 + dither_equal3);
 	ALPHA = near_alpha;

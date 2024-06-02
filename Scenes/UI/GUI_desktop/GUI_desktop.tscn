@@ -479,6 +479,7 @@ __meta__ = {
 }
 
 [node name="Button_turret" type="Button" parent="Bar_menu_2"]
+visible = false
 margin_left = 40.0
 margin_top = 920.0
 margin_right = 140.0
@@ -504,6 +505,7 @@ icon = ExtResource( 7 )
 icon_align = 1
 
 [node name="Button_camera_change" type="Button" parent="Bar_menu_2"]
+visible = false
 margin_left = 40.0
 margin_top = 840.0
 margin_right = 140.0
@@ -516,6 +518,7 @@ icon = ExtResource( 31 )
 icon_align = 1
 
 [node name="Slider_zoom" type="VSlider" parent="Bar_menu_2"]
+visible = false
 margin_left = 40.0
 margin_top = 390.0
 margin_right = 140.0
@@ -581,6 +584,7 @@ icon = ExtResource( 18 )
 icon_align = 1
 
 [node name="Bar_control_2" type="Control" parent="."]
+visible = false
 margin_left = 1580.0
 margin_top = 990.0
 margin_right = 1830.0

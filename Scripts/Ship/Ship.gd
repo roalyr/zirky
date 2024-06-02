@@ -7,9 +7,9 @@ onready var ui = get_node("/root/Main/UI")
 const accel_damp_factor = 0.3
 
 var velocity_limiter_state = 0
-const velocity_limmiter_1 = 1e2
-const velocity_limmiter_2 = 1e5
-const velocity_limmiter_3 = 1e10
+const velocity_limmiter_1 = 1e3
+const velocity_limmiter_2 = 1e6
+const velocity_limmiter_3 = 1e12
 const velocity_limmiter_4 = 1e17
 
 
@@ -106,14 +106,20 @@ func _integrate_forces(state):
 	PlayerState.ship_linear_velocity = vel
 	
 	# Limit the velocity according to engine state.
-	if (vel > velocity_limmiter_1 and velocity_limiter_state == 0) or \
-		(vel > velocity_limmiter_2 and velocity_limiter_state == 1) or \
-		(vel > velocity_limmiter_3 and velocity_limiter_state == 2) or \
-		(vel > velocity_limmiter_4 and velocity_limiter_state == 3):
-		# engine_delay_time = engine_delay_time_base * engine_delay_lag_factor
+#	if (vel > velocity_limmiter_1 and velocity_limiter_state == 0) or \
+#		(vel > velocity_limmiter_2 and velocity_limiter_state == 1) or \
+#		(vel > velocity_limmiter_3 and velocity_limiter_state == 2) or \
+#		(vel > velocity_limmiter_4 and velocity_limiter_state == 3):
+#		# engine_delay_time = engine_delay_time_base * engine_delay_lag_factor
+#		is_accelerating(false)
+#	else:
+#		engine_delay_time = engine_delay_time_base
+
+	if vel > velocity_limmiter_4:
 		is_accelerating(false)
-	else:
-		engine_delay_time = engine_delay_time_base
+
+	engine_delay_time = engine_delay_time_base
+		
 	
 	# Modify origin rebase limit.
 	if vel > Constants.rebase_limit_margin*Constants.rebase_lag:
