@@ -197,6 +197,7 @@ margin_bottom = 400.0
 mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="Readings/Debug_panel"]
+visible = false
 material = ExtResource( 25 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -669,6 +670,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_control"]
+visible = false
 material = ExtResource( 25 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -731,6 +733,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_control_2"]
+visible = false
 material = ExtResource( 25 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -787,6 +790,7 @@ position = Vector2( 230, 10 )
 normal = ExtResource( 35 )
 
 [node name="Panel_shade_button_touch" type="Panel" parent="Bar_control_2/Button_velocity_limiter"]
+visible = false
 show_behind_parent = true
 material = ExtResource( 25 )
 anchor_right = 1.0
@@ -801,6 +805,7 @@ margin_right = 510.0
 margin_bottom = 110.0
 
 [node name="Panel" type="Panel" parent="Bar_nav"]
+visible = false
 material = ExtResource( 25 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -920,6 +925,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_nav/Popup_nav_constellations"]
+visible = false
 material = ExtResource( 25 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -953,6 +959,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_nav/Popup_nav_systems"]
+visible = false
 material = ExtResource( 25 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -986,6 +993,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_nav/Popup_nav_stars"]
+visible = false
 material = ExtResource( 25 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1019,6 +1027,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_nav/Popup_nav_planets"]
+visible = false
 material = ExtResource( 25 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1052,6 +1061,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_nav/Popup_structures"]
+visible = false
 material = ExtResource( 25 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1081,6 +1091,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_items"]
+visible = false
 material = ExtResource( 25 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1170,6 +1181,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_items/Popup_PLACEHOLDER"]
+visible = false
 material = ExtResource( 25 )
 anchor_right = 1.0
 anchor_bottom = 1.0

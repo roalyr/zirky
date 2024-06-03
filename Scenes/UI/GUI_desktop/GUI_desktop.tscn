@@ -107,6 +107,7 @@ margin_bottom = 380.0
 mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="Readings/Debug_panel"]
+visible = false
 material = ExtResource( 21 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -536,6 +537,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_control"]
+visible = false
 material = ExtResource( 21 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -593,6 +595,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_control_2"]
+visible = false
 material = ExtResource( 21 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -646,6 +649,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_nav"]
+visible = false
 material = ExtResource( 21 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -735,6 +739,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_nav/Popup_nav_constellations"]
+visible = false
 material = ExtResource( 21 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -769,6 +774,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_nav/Popup_nav_systems"]
+visible = false
 material = ExtResource( 21 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -803,6 +809,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_nav/Popup_nav_stars"]
+visible = false
 material = ExtResource( 21 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -837,6 +844,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_nav/Popup_nav_planets"]
+visible = false
 material = ExtResource( 21 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -871,6 +879,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Bar_nav/Popup_structures"]
+visible = false
 material = ExtResource( 21 )
 anchor_right = 1.0
 anchor_bottom = 1.0

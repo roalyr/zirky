@@ -10,10 +10,10 @@ var velocity_limiter_state = 0
 const velocity_limmiter_1 = 1e3
 const velocity_limmiter_2 = 1e6
 const velocity_limmiter_3 = 1e12
-const velocity_limmiter_4 = 1e17
+const velocity_limmiter_4 = 1e16
 
 
-const accel_max = 1e23
+const accel_max = 1e19
 
 const engine_delay_time_base = 0.05
 # const engine_delay_lag_factor = 1
@@ -28,8 +28,8 @@ const autopilot_angle_deviation = 0.8
 
 # Lesser is more precise, aim at ration 1:2 for decel being larger
 # Higher numbers mean more agressive AP velocity handling.
-const autopilot_accel_factor = 0.2 # 0.22
-const autopilot_deccel_factor = 0.4 # 0.44
+const autopilot_accel_factor = 0.22 # 0.22
+const autopilot_deccel_factor = 0.44 # 0.44
 
 # Orbiting factor allows to approach not at a straight line, but slightly orbiting.
 var autopilot_orbiting_factor = 0.0
@@ -63,9 +63,9 @@ var torque = Vector3(0,0,0)
 
 # Load ship scenes.
 # Camera ship as default.
-onready var player_camera_ship = load("res://Scenes/Ships/Player_camera.tscn")
+onready var player_camera_ship = load("res://Scenes_new/Ships/Ship_camera.tscn")
 # Load other ships.
-onready var ship_phoenix_heavy = load("res://Scenes/Ships/Phoenix_heavy.tscn")
+# onready var ship_phoenix_heavy = load("res://Scenes/Ships/Phoenix_heavy.tscn")
 
 
 
@@ -115,8 +115,8 @@ func _integrate_forces(state):
 #	else:
 #		engine_delay_time = engine_delay_time_base
 
-	if vel > velocity_limmiter_4:
-		is_accelerating(false)
+	#if vel > velocity_limmiter_4:
+	#	is_accelerating(false)
 
 	engine_delay_time = engine_delay_time_base
 		
@@ -284,7 +284,7 @@ func init_ship():
 	self.mass = self.ship_mass
 	PlayerState.acceleration = 0
 	PlayerState.accel_ticks = idle_engine_ticks
-	adjust_exhaust()
+	# adjust_exhaust()
 
 
 func adjust_exhaust():
@@ -355,13 +355,13 @@ func is_accelerating(accelerating):
 	PlayerState.acceleration = pow(pow(2.0, PlayerState.accel_ticks), accel_damp_factor)
 	
 	# Adjust visuals.
-	adjust_exhaust()
+	# adjust_exhaust()
 
 
 func is_engine_kill():
 	PlayerState.acceleration = 0
 	PlayerState.accel_ticks = idle_engine_ticks
-	adjust_exhaust()
+	# adjust_exhaust()
 		
 func is_target_autopilot_locked(target):
 	PlayerState.autopilot_target = target

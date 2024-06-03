@@ -17,12 +17,12 @@ const camera_push_visibility_velocity = 1e8
 # Do not edit, this compensates for near plane offset and prevents flickering.
 const camera_z_near_velocity_factor = 1e-5
 # Those numbers are made to create a warp effect.
-const camera_fov_velocity_factor = 1e-4
-const camera_fov_derivative = 4 # Higher value - more fov
-const camera_fov_max_delta = 160 - Constants.camera_fov
+const camera_fov_velocity_factor = 1e-1 # Larger value - effects starts earlier
+const camera_fov_derivative = 2 # Higher value - more fov
+const camera_fov_max_delta = 130 - Constants.camera_fov
 const camera_brightness_velocity_factor = 2e-4
 const camera_brightness_derivative = 0.1
-const camera_brightness_max_delta = 1.2
+const camera_brightness_max_delta = 1.3
 # TODO: adjust background colors separatenly?
 
 # Values.

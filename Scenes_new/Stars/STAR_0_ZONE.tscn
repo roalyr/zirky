@@ -61,69 +61,84 @@ __meta__ = {
 }
 autopilot_range = 4.03e+09
 
-[node name="Star_sprite_square_wide" parent="Scenes/STAR_0" instance=ExtResource( 2 )]
-transform = Transform( 6.63e+08, 0, 0, 0, 6.63e+08, 0, 0, 0, 6.63e+08, 0, 0, 0 )
-
-[node name="Plane" parent="Scenes/STAR_0/Star_sprite_square_wide" index="0"]
-material_override = ExtResource( 6 )
-
 [node name="Model_663000000" type="LOD" parent="Scenes/STAR_0"]
 transform = Transform( 6.63e+08, 0, 0, 0, 6.63e+08, 0, 0, 0, 6.63e+08, 0, 0, 0 )
 
-[node name="LOD0" type="Spatial" parent="Scenes/STAR_0/Model_663000000"]
+[node name="LOD0_1e10" type="Spatial" parent="Scenes/STAR_0/Model_663000000"]
 lod_range = 1e+10
 
-[node name="Surface" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD0"]
+[node name="Surface" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD0_1e10"]
 material_override = ExtResource( 3 )
 mesh = SubResource( 96 )
 skeleton = NodePath("")
 
-[node name="Corona" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD0"]
+[node name="Corona" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD0_1e10"]
 transform = Transform( 1.516, 0, 0, 0, 1.516, 0, 0, 0, 1.516, 0, 0, 0 )
 material_override = ExtResource( 7 )
 mesh = SubResource( 95 )
 skeleton = NodePath("../..")
 
-[node name="Halo_directional" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD0"]
+[node name="Halo_directional" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD0_1e10"]
 material_override = ExtResource( 4 )
 mesh = SubResource( 93 )
 skeleton = NodePath("../..")
 
-[node name="Halo_near" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD0"]
+[node name="Halo_near" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD0_1e10"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 material_override = ExtResource( 5 )
 mesh = SubResource( 94 )
 skeleton = NodePath("../..")
 
-[node name="LOD1" type="Spatial" parent="Scenes/STAR_0/Model_663000000"]
+[node name="LOD1_1e11" type="Spatial" parent="Scenes/STAR_0/Model_663000000"]
 visible = false
 lod_range = 1e+11
 
-[node name="Surface" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD1"]
+[node name="Surface" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD1_1e11"]
 material_override = ExtResource( 3 )
 mesh = SubResource( 97 )
 skeleton = NodePath("")
 
-[node name="Halo_directional" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD1"]
+[node name="Halo_directional" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD1_1e11"]
 material_override = ExtResource( 4 )
 mesh = SubResource( 98 )
 skeleton = NodePath("../..")
 
-[node name="Halo_near" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD1"]
+[node name="Halo_near" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD1_1e11"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 material_override = ExtResource( 5 )
 mesh = SubResource( 99 )
 skeleton = NodePath("../..")
 
-[node name="LOD2" type="Spatial" parent="Scenes/STAR_0/Model_663000000"]
-visible = false
+[node name="Star_sprite_square_wide" parent="Scenes/STAR_0/Model_663000000/LOD1_1e11" instance=ExtResource( 2 )]
 
-[node name="Halo_directional" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD2"]
+[node name="Plane" parent="Scenes/STAR_0/Model_663000000/LOD1_1e11/Star_sprite_square_wide" index="0"]
+material_override = ExtResource( 6 )
+
+[node name="LOD2_1e14" type="Spatial" parent="Scenes/STAR_0/Model_663000000"]
+visible = false
+lod_range = 1e+14
+
+[node name="Halo_directional" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD2_1e14"]
 material_override = ExtResource( 4 )
 mesh = SubResource( 98 )
 skeleton = NodePath("../..")
 
+[node name="Star_sprite_square_wide" parent="Scenes/STAR_0/Model_663000000/LOD2_1e14" instance=ExtResource( 2 )]
+
+[node name="Plane" parent="Scenes/STAR_0/Model_663000000/LOD2_1e14/Star_sprite_square_wide" index="0"]
+material_override = ExtResource( 6 )
+
+[node name="LOD3" type="Spatial" parent="Scenes/STAR_0/Model_663000000"]
+visible = false
+
+[node name="Star_sprite_square_wide" parent="Scenes/STAR_0/Model_663000000/LOD3" instance=ExtResource( 2 )]
+
+[node name="Plane" parent="Scenes/STAR_0/Model_663000000/LOD3/Star_sprite_square_wide" index="0"]
+material_override = ExtResource( 6 )
+
 [connection signal="body_entered" from="." to="." method="_on_Local_space_trigger_zone_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Local_space_trigger_zone_body_exited"]
 
-[editable path="Scenes/STAR_0/Star_sprite_square_wide"]
+[editable path="Scenes/STAR_0/Model_663000000/LOD1_1e11/Star_sprite_square_wide"]
+[editable path="Scenes/STAR_0/Model_663000000/LOD2_1e14/Star_sprite_square_wide"]
+[editable path="Scenes/STAR_0/Model_663000000/LOD3/Star_sprite_square_wide"]
