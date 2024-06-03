@@ -614,7 +614,6 @@ __meta__ = {
 }
 
 [node name="Button_turret" type="Button" parent="Bar_menu_2"]
-visible = false
 margin_left = 10.0
 margin_top = 860.0
 margin_right = 110.0

@@ -1,16 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scenes_new/Systems/0/STAR_0_ZONE.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes_new/Stars/STAR_0_ZONE.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes_new/Nebulas/Nebula_2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Origin_rebase/Rebase_global.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/Environment/Stellar_objects/Cloud_global.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Environment/Stellar_objects/Nebula_green_red.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes_new/Nebulas/Nebula_1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Environment/Star_placeholders_M.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Environment/Star_placeholders_G.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Environment/Star_placeholders_B.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Environment/Stellar_objects/Nebula_blue.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scripts/Viewport/Object_visible_after_load.gd" type="Script" id=16]
-[ext_resource path="res://Scenes/Environment/Stellar_objects/Nebula_orange.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Environment/Stellar_objects/Nebula_sky.tscn" type="PackedScene" id=18]
 
 [node name="Global_space" type="Position3D"]
 script = ExtResource( 3 )
@@ -19,148 +16,60 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Star_placeholders" type="Position3D" parent="."]
+transform = Transform( 0.0788588, 0.0323539, -0.0508753, -0.0221764, 0.0934562, 0.0250586, 0.0560649, -0.00854127, 0.0814712, 0, 0, 0 )
+script = ExtResource( 16 )
+
+[node name="Star_placeholders_B" parent="Star_placeholders" instance=ExtResource( 11 )]
+transform = Transform( -2.43107, 2.36911, 2.25395, 3.07153, 2.61798, 0.561176, -1.12188, 2.03386, -3.34781, -2.37796e+17, -4.6393e+17, -1.77499e+17 )
+
+[node name="Star_placeholders_B2" parent="Star_placeholders" instance=ExtResource( 11 )]
+transform = Transform( -9.84437, 2.5112, -0.452161, 1.42579, 6.90842, 7.32548, 2.11604, 7.02777, -7.03949, -2.37796e+17, -4.6393e+17, -1.77499e+17 )
+visible = false
+
+[node name="Star_placeholders_G" parent="Star_placeholders" instance=ExtResource( 10 )]
+transform = Transform( 0.568859, -2.97672, -0.573296, 2.29091, 0.0401406, 2.06476, -1.98526, -0.806634, 2.21839, -6.75589e+17, -4.57595e+17, -1.35122e+16 )
+
+[node name="Star_placeholders_G2" parent="Star_placeholders" instance=ExtResource( 10 )]
+transform = Transform( -1.31269, 1.25744, 1.79343, 0.262193, -1.9856, 1.58408, 2.17458, 0.998464, 0.891612, 8.1026e+17, -4.90513e+16, -1.13861e+18 )
+
+[node name="Star_placeholders_G3" parent="Star_placeholders" instance=ExtResource( 10 )]
+transform = Transform( -5.28549, -3.30631, -1.34858, 3.17846, -3.25855, -4.46831, 1.62717, -4.37454, 4.34766, -6.75589e+17, -4.57595e+17, -1.35118e+16 )
+visible = false
+
+[node name="Star_placeholders_G4" parent="Star_placeholders" instance=ExtResource( 10 )]
+transform = Transform( -0.347024, 7.78716, -0.0228462, 5.15002, 0.246697, 5.84611, 5.84101, 0.24514, -5.15584, 8.1026e+17, -4.90511e+16, -1.13861e+18 )
+visible = false
+
+[node name="Star_placeholders_M" parent="Star_placeholders" instance=ExtResource( 9 )]
+transform = Transform( 2.2329, -1.10983, -0.0815095, 0.964617, 2.02144, -1.09884, 0.554864, 0.951958, 2.23832, 1.05532e+18, -1.73938e+17, -4.23937e+17 )
+
+[node name="Star_placeholders_M3" parent="Star_placeholders" instance=ExtResource( 9 )]
+transform = Transform( 2.51382, -2.86626, -0.0169531, 1.57468, 1.36215, 3.19374, -2.39502, -2.11282, 2.082, 1.05532e+18, -1.73938e+17, -4.23937e+17 )
+
+[node name="Star_placeholders_M2" parent="Star_placeholders" instance=ExtResource( 9 )]
+transform = Transform( -1.56652, -0.02368, 1.92602, 0.131072, -2.47812, 0.0761394, 1.9217, 0.149722, 1.56485, -7.51411e+17, -5.80986e+17, 3.90544e+17 )
+
+[node name="Star_placeholders_M4" parent="Star_placeholders" instance=ExtResource( 9 )]
+transform = Transform( 6.7812, -2.86268, -1.91984, -0.778839, 2.85477, -7.00779, 3.35769, 6.44362, 2.25182, -7.51411e+17, -5.80986e+17, 3.90544e+17 )
+visible = false
+
 [node name="Nebula_1" parent="." instance=ExtResource( 6 )]
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="Zone_nebula_orange" parent="." instance=ExtResource( 17 )]
-transform = Transform( 0.0893932, 0.99594, 0.0106466, -0.297457, 0.0368978, -0.954022, -0.950541, 0.082116, 0.299548, -7.99526e+17, 2.37025e+17, -1.99909e+17 )
-visible = false
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Zone_nebula_blue" parent="." instance=ExtResource( 15 )]
-transform = Transform( 0.729017, -0.221007, 0.647835, -0.412554, -0.897088, 0.158214, 0.546199, -0.382608, -0.74517, 3.73047e+17, -9.23179e+17, -1.19595e+17 )
-visible = false
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Zone_nebula_green_red" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3983e+16, -7.94959e+17, -9.16667e+17 )
-visible = false
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Zone_nebula_sky" parent="." instance=ExtResource( 18 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02324e+17, 2.04906e+18, -1.19853e+17 )
-visible = false
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Fake_stars" type="Position3D" parent="."]
-transform = Transform( 0.113417, 0.0465323, -0.0731705, -0.0318948, 0.134411, 0.0360399, 0.0806343, -0.0122842, 0.117174, 1.87264e+17, 6.72165e+16, -3.53759e+16 )
-script = ExtResource( 16 )
-
-[node name="Star_placeholders_B" parent="Fake_stars" instance=ExtResource( 11 )]
-transform = Transform( -2.43107, 2.36911, 2.25395, 3.07153, 2.61798, 0.561176, -1.12188, 2.03386, -3.34781, -2.37796e+17, -4.6393e+17, -1.77499e+17 )
-
-[node name="Star_placeholders_B2" parent="Fake_stars" instance=ExtResource( 11 )]
-transform = Transform( -9.84437, 2.5112, -0.452161, 1.42579, 6.90842, 7.32548, 2.11604, 7.02777, -7.03949, -2.37796e+17, -4.6393e+17, -1.77499e+17 )
-
-[node name="Star_placeholders_G" parent="Fake_stars" instance=ExtResource( 10 )]
-transform = Transform( 0.568859, -2.97672, -0.573296, 2.29091, 0.0401406, 2.06476, -1.98526, -0.806634, 2.21839, -6.75589e+17, -4.57595e+17, -1.35122e+16 )
-
-[node name="Star_placeholders_G3" parent="Fake_stars" instance=ExtResource( 10 )]
-transform = Transform( -5.28549, -3.30631, -1.34858, 3.17846, -3.25855, -4.46831, 1.62717, -4.37454, 4.34766, -6.75589e+17, -4.57595e+17, -1.35118e+16 )
-
-[node name="Star_placeholders_G2" parent="Fake_stars" instance=ExtResource( 10 )]
-transform = Transform( -1.31269, 1.25744, 1.79343, 0.262193, -1.9856, 1.58408, 2.17458, 0.998464, 0.891612, 8.1026e+17, -4.90513e+16, -1.13861e+18 )
-
-[node name="Star_placeholders_G4" parent="Fake_stars" instance=ExtResource( 10 )]
-transform = Transform( -0.347024, 7.78716, -0.0228462, 5.15002, 0.246697, 5.84611, 5.84101, 0.24514, -5.15584, 8.1026e+17, -4.90511e+16, -1.13861e+18 )
-
-[node name="Star_placeholders_M" parent="Fake_stars" instance=ExtResource( 9 )]
-transform = Transform( 2.2329, -1.10983, -0.0815095, 0.964617, 2.02144, -1.09884, 0.554864, 0.951958, 2.23832, 1.05532e+18, -1.73938e+17, -4.23937e+17 )
-
-[node name="Star_placeholders_M3" parent="Fake_stars" instance=ExtResource( 9 )]
-transform = Transform( 2.51382, -2.86626, -0.0169531, 1.57468, 1.36215, 3.19374, -2.39502, -2.11282, 2.082, 1.05532e+18, -1.73938e+17, -4.23937e+17 )
-
-[node name="Star_placeholders_M2" parent="Fake_stars" instance=ExtResource( 9 )]
-transform = Transform( -1.56652, -0.02368, 1.92602, 0.131072, -2.47812, 0.0761394, 1.9217, 0.149722, 1.56485, -7.51411e+17, -5.80986e+17, 3.90544e+17 )
-
-[node name="Star_placeholders_M4" parent="Fake_stars" instance=ExtResource( 9 )]
-transform = Transform( 6.7812, -2.86268, -1.91984, -0.778839, 2.85477, -7.00779, 3.35769, 6.44362, 2.25182, -7.51411e+17, -5.80986e+17, 3.90544e+17 )
-
-[node name="Fake_stars2" type="Position3D" parent="."]
-transform = Transform( -0.00472497, 0.143778, -0.00291353, -0.142416, -0.00508264, -0.019866, -0.0199539, 0.00223139, 0.142477, -5.97139e+17, -2.87685e+17, -7.71908e+17 )
-visible = false
-script = ExtResource( 16 )
-
-[node name="Star_placeholders_B" parent="Fake_stars2" instance=ExtResource( 11 )]
-transform = Transform( -2.43107, 2.36911, 2.25395, 3.07153, 2.61798, 0.561176, -1.12188, 2.03386, -3.34781, -2.37796e+17, -4.6393e+17, -1.77499e+17 )
-
-[node name="Star_placeholders_B2" parent="Fake_stars2" instance=ExtResource( 11 )]
-transform = Transform( -9.84437, 2.5112, -0.452161, 1.42579, 6.90842, 7.32548, 2.11604, 7.02777, -7.03949, -2.37796e+17, -4.6393e+17, -1.77499e+17 )
-
-[node name="Star_placeholders_G" parent="Fake_stars2" instance=ExtResource( 10 )]
-transform = Transform( 0.568859, -2.97672, -0.573296, 2.29091, 0.0401406, 2.06476, -1.98526, -0.806634, 2.21839, -6.75589e+17, -4.57595e+17, -1.35122e+16 )
-
-[node name="Star_placeholders_G3" parent="Fake_stars2" instance=ExtResource( 10 )]
-transform = Transform( -5.28549, -3.30631, -1.34858, 3.17846, -3.25855, -4.46831, 1.62717, -4.37454, 4.34766, -6.75589e+17, -4.57595e+17, -1.35118e+16 )
-
-[node name="Star_placeholders_G2" parent="Fake_stars2" instance=ExtResource( 10 )]
-transform = Transform( -1.31269, 1.25744, 1.79343, 0.262193, -1.9856, 1.58408, 2.17458, 0.998464, 0.891612, 8.1026e+17, -4.90513e+16, -1.13861e+18 )
-
-[node name="Star_placeholders_G4" parent="Fake_stars2" instance=ExtResource( 10 )]
-transform = Transform( -0.347024, 7.78716, -0.0228462, 5.15002, 0.246697, 5.84611, 5.84101, 0.24514, -5.15584, 8.1026e+17, -4.90511e+16, -1.13861e+18 )
-
-[node name="Star_placeholders_M" parent="Fake_stars2" instance=ExtResource( 9 )]
-transform = Transform( 2.2329, -1.10983, -0.0815095, 0.964617, 2.02144, -1.09884, 0.554864, 0.951958, 2.23832, 1.05532e+18, -1.73938e+17, -4.23937e+17 )
-
-[node name="Star_placeholders_M3" parent="Fake_stars2" instance=ExtResource( 9 )]
-transform = Transform( 2.51382, -2.86626, -0.0169531, 1.57468, 1.36215, 3.19374, -2.39502, -2.11282, 2.082, 1.05532e+18, -1.73938e+17, -4.23937e+17 )
-
-[node name="Star_placeholders_M2" parent="Fake_stars2" instance=ExtResource( 9 )]
-transform = Transform( -1.56652, -0.02368, 1.92602, 0.131072, -2.47812, 0.0761394, 1.9217, 0.149722, 1.56485, -7.51411e+17, -5.80986e+17, 3.90544e+17 )
-
-[node name="Star_placeholders_M4" parent="Fake_stars2" instance=ExtResource( 9 )]
-transform = Transform( 6.7812, -2.86268, -1.91984, -0.778839, 2.85477, -7.00779, 3.35769, 6.44362, 2.25182, -7.51411e+17, -5.80986e+17, 3.90544e+17 )
-
-[node name="Fake_stars3" type="Position3D" parent="."]
-transform = Transform( -0.0718663, -0.0356266, -0.0744869, 0.0784716, -0.0601892, -0.0469229, -0.025685, -0.084204, 0.065056, -6.88811e+17, 2.86599e+17, 8.29655e+17 )
-visible = false
-script = ExtResource( 16 )
-
-[node name="Star_placeholders_B" parent="Fake_stars3" instance=ExtResource( 11 )]
-transform = Transform( -2.43107, 2.36911, 2.25395, 3.07153, 2.61798, 0.561176, -1.12188, 2.03386, -3.34781, -2.37796e+17, -4.6393e+17, -1.77499e+17 )
-
-[node name="Star_placeholders_B2" parent="Fake_stars3" instance=ExtResource( 11 )]
-transform = Transform( -9.84437, 2.5112, -0.452161, 1.42579, 6.90842, 7.32548, 2.11604, 7.02777, -7.03949, -2.37796e+17, -4.6393e+17, -1.77499e+17 )
-
-[node name="Star_placeholders_G" parent="Fake_stars3" instance=ExtResource( 10 )]
-transform = Transform( 0.568859, -2.97672, -0.573296, 2.29091, 0.0401406, 2.06476, -1.98526, -0.806634, 2.21839, -6.75589e+17, -4.57595e+17, -1.35122e+16 )
-
-[node name="Star_placeholders_G3" parent="Fake_stars3" instance=ExtResource( 10 )]
-transform = Transform( -5.28549, -3.30631, -1.34858, 3.17846, -3.25855, -4.46831, 1.62717, -4.37454, 4.34766, -6.75589e+17, -4.57595e+17, -1.35118e+16 )
-
-[node name="Star_placeholders_G2" parent="Fake_stars3" instance=ExtResource( 10 )]
-transform = Transform( -1.31269, 1.25744, 1.79343, 0.262193, -1.9856, 1.58408, 2.17458, 0.998464, 0.891612, 8.1026e+17, -4.90513e+16, -1.13861e+18 )
-
-[node name="Star_placeholders_G4" parent="Fake_stars3" instance=ExtResource( 10 )]
-transform = Transform( -0.347024, 7.78716, -0.0228462, 5.15002, 0.246697, 5.84611, 5.84101, 0.24514, -5.15584, 8.1026e+17, -4.90511e+16, -1.13861e+18 )
-
-[node name="Star_placeholders_M" parent="Fake_stars3" instance=ExtResource( 9 )]
-transform = Transform( 2.2329, -1.10983, -0.0815095, 0.964617, 2.02144, -1.09884, 0.554864, 0.951958, 2.23832, 1.05532e+18, -1.73938e+17, -4.23937e+17 )
-
-[node name="Star_placeholders_M3" parent="Fake_stars3" instance=ExtResource( 9 )]
-transform = Transform( 2.51382, -2.86626, -0.0169531, 1.57468, 1.36215, 3.19374, -2.39502, -2.11282, 2.082, 1.05532e+18, -1.73938e+17, -4.23937e+17 )
-
-[node name="Star_placeholders_M2" parent="Fake_stars3" instance=ExtResource( 9 )]
-transform = Transform( -1.56652, -0.02368, 1.92602, 0.131072, -2.47812, 0.0761394, 1.9217, 0.149722, 1.56485, -7.51411e+17, -5.80986e+17, 3.90544e+17 )
-
-[node name="Star_placeholders_M4" parent="Fake_stars3" instance=ExtResource( 9 )]
-transform = Transform( 6.7812, -2.86268, -1.91984, -0.778839, 2.85477, -7.00779, 3.35769, 6.44362, 2.25182, -7.51411e+17, -5.80986e+17, 3.90544e+17 )
+[node name="Nebula_2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57148e+17, 6.70532e+15, 2.79213e+16 )
 
 [node name="STAR_0_ZONE" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71677e+11, -1.31722e+10, -9.56322e+11 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74503e+16, -1.31722e+10, 2.41616e+16 )
 
 [node name="STAR_0_ZONE2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60529e+17, -6.98221e+16, 4.15871e+17 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91366e+17, 1.3113e+16, 3.78099e+16 )
 
 [node name="STAR_0_ZONE3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32167e+17, -1.09522e+17, -1.41908e+17 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46003e+17, -3.01094e+15, 2.25352e+16 )
+
+[node name="STAR_0_ZONE4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15466e+17, 2.2824e+16, 1.17096e+16 )
+
+[node name="STAR_0_ZONE5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1e+12 )

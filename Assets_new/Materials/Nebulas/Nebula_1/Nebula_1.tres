@@ -2,39 +2,37 @@
 
 [ext_resource path="res://Assets_new/Shaders/Nebula/Global_cloud_main.gdshader" type="Shader" id=1]
 [ext_resource path="res://Assets_new/Materials/Nebulas/Nebula_1/Nebula_1_out.tres" type="Material" id=2]
-[ext_resource path="res://Assets_new/Textures/Noise/Normal/Cell1_light.png" type="Texture" id=3]
-[ext_resource path="res://Assets_new/Textures/Noise/BW/Cell1.png" type="Texture" id=4]
+[ext_resource path="res://Assets_new/Textures/Noise/Normal/Voronoi 8 - 512x512_normal_light.png" type="Texture" id=3]
+[ext_resource path="res://Assets_new/Textures/Noise/BW/Voronoi 8 - 512x512.png" type="Texture" id=4]
 
 [resource]
 next_pass = ExtResource( 2 )
 shader = ExtResource( 1 )
-shader_param/albedo = Color( 0.815686, 0.815686, 0.815686, 1 )
-shader_param/albedo_glow_near = Color( 0, 0, 0, 1 )
-shader_param/albedo_detail_near = Color( 0, 0, 0, 1 )
-shader_param/albedo_detail_distant = Color( 0.905882, 0.572549, 0, 1 )
-shader_param/albedo_fog = Color( 0, 0.12549, 0.105882, 1 )
-shader_param/normal_detail_factor = 1.116
-shader_param/normal_detail_power = 2.0
-shader_param/normal_detail_rim_strength = 0.703
+shader_param/albedo = Color( 0.862745, 0.862745, 0.862745, 1 )
+shader_param/albedo_detail_distant = Color( 0.635294, 0.419608, 0, 1 )
+shader_param/albedo_fog = Color( 0.164706, 0.152941, 0.0745098, 1 )
+shader_param/normal_detail_factor = 0.485
+shader_param/normal_detail_power = 1.125
+shader_param/normal_detail_rim_strength = 0.36
 shader_param/normal_detail_rim_exponent = 1.672
 shader_param/normal_detail_uv1_scale = 1.0
 shader_param/normal_detail_uv1_offset = Vector3( 0, 0, 0 )
-shader_param/distant_detail_phase = -1.385
-shader_param/distant_detail_factor = 0.68
-shader_param/distant_detail_strength = 1.859
-shader_param/fade_detail_distant = 4e+18
-shader_param/fade_detail_near = 1e+18
-shader_param/fade_albedo_near = 4e+18
-shader_param/fade_discard_near = 1e+18
-shader_param/fade_fog = 2e+18
-shader_param/rim_strength = 0.976
-shader_param/rim_exponent = 2.004
-shader_param/color_power_r = 1.38
-shader_param/color_power_g = 1.138
-shader_param/color_power_b = 0.976
-shader_param/color_multiplier_r = 1.396
-shader_param/color_multiplier_g = 1.099
-shader_param/color_multiplier_b = 0.83
+shader_param/distant_detail_phase = -1.483
+shader_param/distant_detail_factor = 0.864
+shader_param/distant_detail_strength = 0.769
+shader_param/fade_detail_distant = 3e+17
+shader_param/fade_albedo_near = 2e+17
+shader_param/fade_discard_near = 1e+17
+shader_param/fade_fog = 2e+17
+shader_param/fog_power = 4.842
+shader_param/rim_strength = 1.132
+shader_param/rim_exponent = 4.478
+shader_param/color_power_r = 1.043
+shader_param/color_power_g = 0.872
+shader_param/color_power_b = 1.058
+shader_param/color_multiplier_r = 1.141
+shader_param/color_multiplier_g = 0.743
+shader_param/color_multiplier_b = 1.485
 shader_param/dither_equal_strength = 0.5
 shader_param/dither_noise_strength = 0.728
 shader_param/dither_main_power = 0.564
@@ -42,7 +40,7 @@ shader_param/dither_threshold = 1.294
 shader_param/dither_detail_contrast = 1.0
 shader_param/dither_darken = 0.5
 shader_param/uv1_blend_sharpness = 10.0
-shader_param/uv1_scale = 0.103
+shader_param/uv1_scale = -0.093
 shader_param/uv1_offset = Vector3( 0, 0, 0 )
 shader_param/distant_detail_noise = ExtResource( 4 )
 shader_param/normal_detail_minor_noise = ExtResource( 3 )

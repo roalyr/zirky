@@ -1,0 +1,46 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://Assets_new/Shaders/Nebula/Global_cloud_main.gdshader" type="Shader" id=1]
+[ext_resource path="res://Assets_new/Materials/Nebulas/Nebula_2/Nebula_2_out.tres" type="Material" id=2]
+[ext_resource path="res://Assets_new/Textures/Noise/Normal/Melt 4 - 512x512_normal_light.png" type="Texture" id=3]
+[ext_resource path="res://Assets_new/Textures/Noise/BW/Milky 6 - 512x512.png" type="Texture" id=4]
+
+[resource]
+next_pass = ExtResource( 2 )
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 0.133333, 0.105882, 0.0901961, 1 )
+shader_param/albedo_detail_distant = Color( 0.643137, 0.298039, 0.0235294, 1 )
+shader_param/albedo_fog = Color( 0, 0.501961, 0.407843, 1 )
+shader_param/normal_detail_factor = 3.696
+shader_param/normal_detail_power = 1.667
+shader_param/normal_detail_rim_strength = 0.751
+shader_param/normal_detail_rim_exponent = 3.029
+shader_param/normal_detail_uv1_scale = 0.075
+shader_param/normal_detail_uv1_offset = Vector3( 0, 0, 0 )
+shader_param/distant_detail_phase = -2.759
+shader_param/distant_detail_factor = 1.172
+shader_param/distant_detail_strength = 0.965
+shader_param/fade_detail_distant = 1.3e+17
+shader_param/fade_albedo_near = 1e+17
+shader_param/fade_discard_near = 2e+16
+shader_param/fade_fog = 1e+17
+shader_param/fog_power = 3.983
+shader_param/rim_strength = 0.809
+shader_param/rim_exponent = 5.209
+shader_param/color_power_r = 1.0
+shader_param/color_power_g = 1.0
+shader_param/color_power_b = 1.0
+shader_param/color_multiplier_r = 1.0
+shader_param/color_multiplier_g = 1.0
+shader_param/color_multiplier_b = 1.0
+shader_param/dither_equal_strength = 0.5
+shader_param/dither_noise_strength = 0.0
+shader_param/dither_main_power = 1.0
+shader_param/dither_threshold = 1.0
+shader_param/dither_detail_contrast = 1.0
+shader_param/dither_darken = 0.75
+shader_param/uv1_blend_sharpness = 10.0
+shader_param/uv1_scale = -0.053
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/distant_detail_noise = ExtResource( 4 )
+shader_param/normal_detail_minor_noise = ExtResource( 3 )

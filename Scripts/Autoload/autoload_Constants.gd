@@ -42,6 +42,7 @@ const camera_turret_roll_vert_limit = 70 # Deg +\-
 const camera_zoom_ticks_max = 100
 #const camera_zoom_out_max = 1e3 # For sandnbox mode
 const camera_zoom_step = 1 # 0.05 ... 0.2
+const camera_zoom_power = 9 # 2 to this power.
 
 
 

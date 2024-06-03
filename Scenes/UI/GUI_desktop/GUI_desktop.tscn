@@ -479,7 +479,6 @@ __meta__ = {
 }
 
 [node name="Button_turret" type="Button" parent="Bar_menu_2"]
-visible = false
 margin_left = 40.0
 margin_top = 920.0
 margin_right = 140.0
@@ -518,7 +517,6 @@ icon = ExtResource( 31 )
 icon_align = 1
 
 [node name="Slider_zoom" type="VSlider" parent="Bar_menu_2"]
-visible = false
 margin_left = 40.0
 margin_top = 390.0
 margin_right = 140.0

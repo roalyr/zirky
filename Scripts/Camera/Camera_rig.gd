@@ -227,7 +227,7 @@ func zoom_camera(mouse_event):
 			current_zoom_extra = get_extra_zoom(zoom_ticks)
 
 func get_extra_zoom(zoom_ticks_extra):
-	return Constants.camera_zoom_step*pow(zoom_ticks_extra, 2)
+	return Constants.camera_zoom_step*pow(zoom_ticks_extra, Constants.camera_zoom_power)
 
 func reset_camera_zoom():
 	camera_min_zoom = max(0.1, Paths.player.camera_horiz_offset)

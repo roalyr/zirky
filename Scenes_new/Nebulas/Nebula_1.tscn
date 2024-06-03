@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets_new/Materials/Nebulas/Nebula_1/Nebula_1.tres" type="Material" id=1]
+[ext_resource path="res://Assets_new/Models/Nebulas/Nebula_1.glb" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Zones/Zone_nebula_global.gd" type="Script" id=18]
+
+[sub_resource type="SphereShape" id=114]
+
+[node name="Nebula_1" type="Area"]
+input_ray_pickable = false
+monitorable = false
+gravity = 0.0
+linear_damp = 0.0
+angular_damp = 0.0
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 7.56e+17, 0, 0, 0, 5.52e+17, 0, 0, 0, 6.02e+17, -0.0580967, 0.0230848, 0.0268611 )
+shape = SubResource( 114 )
+
+[node name="Scenes" type="LOD" parent="."]
+
+[node name="Nebula_1_1e17" parent="Scenes" instance=ExtResource( 2 )]
+transform = Transform( 1e+17, 0, 0, 0, 1e+17, 0, 0, 0, 1e+17, 0, 0, 0 )
+lod_range = 5e+17
+
+[node name="Nebula_1" parent="Scenes/Nebula_1_1e17" index="0"]
+material_override = ExtResource( 1 )
+
+[node name="LOD_disable_1e18" type="Spatial" parent="Scenes"]
+visible = false
+lod_range = 1e+18
+
+[connection signal="body_entered" from="." to="." method="_on_Zone_nebula_global_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Zone_nebula_global_body_exited"]
+
+[editable path="Scenes/Nebula_1_1e17"]

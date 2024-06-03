@@ -17,8 +17,6 @@ render_mode
 	depth_draw_opaque;
 
 uniform vec4 albedo : hint_color;
-uniform vec4 albedo_glow_near : hint_color;
-uniform vec4 albedo_detail_near : hint_color;
 uniform vec4 albedo_detail_distant : hint_color;
 uniform vec4 albedo_fog : hint_color;
 
@@ -40,10 +38,11 @@ uniform float distant_detail_strength = 1.0;
 
 
 uniform float fade_detail_distant = 0;
-uniform float fade_detail_near = 0;
 uniform float fade_albedo_near = 0;
 uniform float fade_discard_near = 0;
 uniform float fade_fog = 0;
+
+uniform float fog_power = 1.0;
 
 uniform float rim_strength = 1.0;
 uniform float rim_exponent : hint_range(0.0, 10.0) = 1.0;
@@ -208,7 +207,7 @@ void fragment()
 	);
 
 	// Fog.
-	ALBEDO += albedo_fog.rgb*(1.0-fd_fog);
+	ALBEDO += albedo_fog.rgb*pow((1.0-fd_fog), fog_power);
 
 
 
