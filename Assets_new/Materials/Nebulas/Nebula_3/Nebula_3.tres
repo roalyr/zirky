@@ -1,0 +1,49 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://Assets_new/Shaders/Nebula/Global_cloud_main.gdshader" type="Shader" id=1]
+[ext_resource path="res://Assets_new/Materials/Nebulas/Nebula_3/Nebula_3_out.tres" type="Material" id=2]
+[ext_resource path="res://Assets_new/Textures/Noise/Normal/Turbulent 1 - 512x512_normal_light.png" type="Texture" id=3]
+[ext_resource path="res://Assets_new/Textures/Noise/BW/Vein 1 - 512x512.png" type="Texture" id=4]
+
+[resource]
+next_pass = ExtResource( 2 )
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 0.490196, 0.14902, 0, 1 )
+shader_param/albedo_detail_distant = Color( 0.513726, 0.376471, 0.0784314, 1 )
+shader_param/albedo_fog = Color( 0.988235, 0.901961, 0.67451, 1 )
+shader_param/normal_detail_factor = 1.0
+shader_param/normal_detail_power = -1.0
+shader_param/normal_detail_clamp = 15.0
+shader_param/normal_detail_rim_strength = 0.508
+shader_param/normal_detail_rim_exponent = 1.367
+shader_param/normal_detail_uv1_scale = 3.848
+shader_param/normal_detail_uv1_offset = Vector3( 0, 0, 0 )
+shader_param/distant_detail_phase = 1.179
+shader_param/distant_detail_factor = 1.395
+shader_param/distant_detail_strength = 7.212
+shader_param/fade_detail_distant = 1.5e+17
+shader_param/fade_detail_distant_far = 1e+17
+shader_param/fade_albedo_near = 1e+17
+shader_param/fade_albedo_far = 8e+16
+shader_param/fade_discard_near = 1e+16
+shader_param/fade_fog = 1.5e+17
+shader_param/fog_power = 1.5
+shader_param/rim_strength = 0.747
+shader_param/rim_exponent = 1.706
+shader_param/color_power_r = 0.993
+shader_param/color_power_g = 1.047
+shader_param/color_power_b = 0.902
+shader_param/color_multiplier_r = 1.181
+shader_param/color_multiplier_g = 1.174
+shader_param/color_multiplier_b = 1.0
+shader_param/dither_equal_strength = 0.5
+shader_param/dither_noise_strength = 0.0
+shader_param/dither_main_power = 1.0
+shader_param/dither_threshold = 1.0
+shader_param/dither_detail_contrast = 1.0
+shader_param/dither_darken = 0.5
+shader_param/uv1_blend_sharpness = 10.0
+shader_param/uv1_scale = -2.484
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/distant_detail_noise = ExtResource( 4 )
+shader_param/normal_detail_minor_noise = ExtResource( 3 )

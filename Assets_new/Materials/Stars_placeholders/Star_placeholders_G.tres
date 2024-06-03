@@ -14,3 +14,4 @@ shader_param/exponent = 5.0
 shader_param/pulse_factor = 0.9625
 shader_param/pulse_rate = 3.038
 shader_param/phase = 0.0
+shader_param/distance_fade_max = 1e+10

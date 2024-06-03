@@ -27,8 +27,9 @@ uniform sampler2D normal_detail_minor_noise;
 
 uniform float normal_detail_factor = 1.0;
 uniform float normal_detail_power = 1.0;
+uniform float normal_detail_clamp = 15.0;
 uniform float normal_detail_rim_strength = 1.0;
-uniform float normal_detail_rim_exponent : hint_range(0.0, 10.0) = 1.0;
+uniform float normal_detail_rim_exponent = 1.0;
 uniform float normal_detail_uv1_scale = 1.0;
 uniform vec3 normal_detail_uv1_offset = vec3(0.0);
 
@@ -38,14 +39,16 @@ uniform float distant_detail_strength = 1.0;
 
 
 uniform float fade_detail_distant = 0;
+uniform float fade_detail_distant_far = 1e19;
 uniform float fade_albedo_near = 0;
+uniform float fade_albedo_far = 1e19;
 uniform float fade_discard_near = 0;
 uniform float fade_fog = 0;
 
 uniform float fog_power = 1.0;
 
 uniform float rim_strength = 1.0;
-uniform float rim_exponent : hint_range(0.0, 10.0) = 1.0;
+uniform float rim_exponent = 1.0;
 
 
 
@@ -131,10 +134,14 @@ void vertex() {
 	BINORMAL+= vec3(0.0,1.0,0.0) * abs(normal.z);
 	BINORMAL = normalize(BINORMAL);
 	uv1_power_normal=pow(abs(NORMAL),vec3(uv1_blend_sharpness));
+	
 	uv1_triplanar_pos = VERTEX * pow(2.0, uv1_scale) + uv1_offset;
 	normal_detail_uv1_triplanar_pos = VERTEX * pow(2.0, normal_detail_uv1_scale) + normal_detail_uv1_offset;
+	
 	uv1_power_normal/=dot(uv1_power_normal,vec3(1.0));
+	
 	uv1_triplanar_pos *= vec3(1.0,-1.0, 1.0);
+	normal_detail_uv1_triplanar_pos *= vec3(1.0,-1.0, 1.0);
 
 	vec4 gl_Position = MODELVIEW_MATRIX*vec4(VERTEX, 1.0);
 	gl_Position_z = gl_Position.z;
@@ -184,17 +191,19 @@ void fragment()
 
 	// fade distances.
 	float dist = length(VERTEX);
-	float fd_detail_distant = 1.0-clamp(smoothstep(0.0, fade_detail_distant, dist), 1e-6, 1.0); // fades out
-	float fd_albedo_near = 1.0-clamp(smoothstep(0.0, fade_albedo_near, dist), 1e-6, 1.0); // fades out
-	float fd_discard = 1.0-clamp(smoothstep(0.0, fade_discard_near, dist), 1e-6, 1.0); // fades out
-	float fd_fog = 1.0-clamp(smoothstep(0.0, fade_fog, dist), 1e-6, 1.0); // fades out
+	float fd_detail_distant = clamp(smoothstep(0.0, fade_detail_distant, dist), 1e-6, 1.0); // fades in
+	float fd_detail_distant_far = 1.0 -clamp(smoothstep(0.0, fade_detail_distant_far, dist), 1e-6, 1.0); // fades out
+	float fd_albedo_near = clamp(smoothstep(0.0, fade_albedo_near, dist), 1e-6, 1.0); // fades in
+	float fd_albedo_far =  1.0-clamp(smoothstep(0.0, fade_albedo_far, dist), 1e-6, 1.0); // fades out
+	float fd_discard = clamp(smoothstep(0.0, fade_discard_near, dist), 1e-6, 1.0); // fades in
+	float fd_fog = clamp(smoothstep(0.0, fade_fog, dist), 1e-6, 1.0); // fades in
 
 	// Main color
-	ALBEDO = albedo.rgb * COLOR.rgb * (1.0-fd_albedo_near) 
-		* pow(rim_normal_detail_minor * normal_detail_factor, normal_detail_power);
+	ALBEDO = albedo.rgb * COLOR.rgb * (fd_albedo_near) * (fd_albedo_far)
+		* clamp(pow(rim_normal_detail_minor * normal_detail_factor, normal_detail_power), 0.0, normal_detail_clamp);
 
 	// Details distant.
-	ALBEDO += albedo_detail_distant.rgb*(1.0-fd_detail_distant) * COLOR.rgb
+	ALBEDO += albedo_detail_distant.rgb*(fd_detail_distant) * fd_detail_distant_far *COLOR.rgb
 		* pow((1.0-rim_detail_distant), distant_detail_factor)
 		* distant_detail_strength
 		;
@@ -207,7 +216,7 @@ void fragment()
 	);
 
 	// Fog.
-	ALBEDO += albedo_fog.rgb*pow((1.0-fd_fog), fog_power);
+	ALBEDO += albedo_fog.rgb*pow((fd_fog), fog_power);
 
 
 
@@ -240,7 +249,7 @@ void fragment()
     float dither_noise_value = clamp(fract(sin(dot(SCREEN_UV + VIEW.xy*5e-2, vec2(12.9898, 5648.233))) * 43758.5453), 0.0, 1.0);
 
 	float dither_main = pow((bayer_value), dither_main_power) + dither_noise_strength*dither_noise_value;
-	float near_alpha = 1.0/fd_discard - dither_detail_contrast + dither_detail_contrast*rim_detail_distant;
+	float near_alpha = 1.0/(1.0-fd_discard) - dither_detail_contrast + dither_detail_contrast*rim_detail_distant;
 
 	ALPHA_SCISSOR = dither_threshold + dither_main + dither_equal_strength*(dither_equal + dither_equal2 + dither_equal3);
 	ALPHA = near_alpha;

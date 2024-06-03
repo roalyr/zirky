@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Star_sprite_square_wide.glb-e03c9fec9ccc89116757ce7ae039040d.scn"
+path="res://.import/Star_sprite_square_wide.glb-b3013499eff6a1039be0711d16323d70.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Sprites/Star_sprite_square_wide.glb"
-dest_files=[ "res://.import/Star_sprite_square_wide.glb-e03c9fec9ccc89116757ce7ae039040d.scn" ]
+source_file="res://Assets_new/Models/Sprites/Star_sprite_square_wide.glb"
+dest_files=[ "res://.import/Star_sprite_square_wide.glb-b3013499eff6a1039be0711d16323d70.scn" ]
 
 [params]
 

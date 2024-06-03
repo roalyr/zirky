@@ -18,7 +18,7 @@
 [ext_resource path="res://Assets_new/Shaders/Star/Star_surface.gdshader" type="Shader" id=16]
 [ext_resource path="res://Scenes/Kinematics/Rotating_object.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Models/Sprites/_Star_sprite_square.glb" type="PackedScene" id=18]
-[ext_resource path="res://Assets/Models/Sprites/Star_sprite_square_wide.glb" type="PackedScene" id=19]
+[ext_resource path="res://Assets_new/Models/Sprites/Star_sprite_square_wide.glb" type="PackedScene" id=19]
 
 [sub_resource type="SphereShape" id=108]
 
