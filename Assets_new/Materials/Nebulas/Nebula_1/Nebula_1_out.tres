@@ -3,6 +3,7 @@
 [ext_resource path="res://Assets_new/Shaders/Nebula/Global_cloud_fade_simple.tres" type="Shader" id=1]
 
 [resource]
+render_priority = -1
 shader = ExtResource( 1 )
 shader_param/albedo = Color( 0.0431373, 0.0431373, 0.0431373, 1 )
 shader_param/distance_fade_max = 5e+16

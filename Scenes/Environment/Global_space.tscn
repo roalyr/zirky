@@ -1,14 +1,24 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes_new/Stars/STAR_0_ZONE.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes_new/Nebulas/Nebula_2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Origin_rebase/Rebase_global.gd" type="Script" id=3]
 [ext_resource path="res://Scenes_new/Nebulas/Nebula_3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets_new/Models/Background/Galactic_background.glb" type="PackedScene" id=5]
 [ext_resource path="res://Scenes_new/Nebulas/Nebula_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets_new/Materials/Galctic_background/Ellipsoid_core.tres" type="Material" id=7]
+[ext_resource path="res://Assets_new/Materials/Galctic_background/Ellipsoid_medium.tres" type="Material" id=8]
 [ext_resource path="res://Scenes/Environment/Star_placeholders_M.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Environment/Star_placeholders_G.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Environment/Star_placeholders_B.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets_new/Materials/Galctic_background/Ellipsoid_outer.tres" type="Material" id=12]
+[ext_resource path="res://Assets_new/Materials/Galctic_background/Torus_outer_dark.tres" type="Material" id=13]
+[ext_resource path="res://Assets_new/Materials/Galctic_background/Torus_outer_bright.tres" type="Material" id=14]
+[ext_resource path="res://Assets_new/Materials/Galctic_background/Stars1.tres" type="Material" id=15]
 [ext_resource path="res://Scripts/Viewport/Object_visible_after_load.gd" type="Script" id=16]
+[ext_resource path="res://Assets_new/Materials/Galctic_background/Stars3.tres" type="Material" id=17]
+[ext_resource path="res://Assets_new/Materials/Galctic_background/Stars2.tres" type="Material" id=18]
+[ext_resource path="res://Scripts/Camera/Background.gd" type="Script" id=19]
 
 [node name="Global_space" type="Position3D"]
 script = ExtResource( 3 )
@@ -16,6 +26,45 @@ __meta__ = {
 "_edit_lock_": true,
 "_editor_description_": ""
 }
+
+[node name="Background" type="Position3D" parent="."]
+script = ExtResource( 19 )
+
+[node name="Galactic_background" parent="Background" instance=ExtResource( 5 )]
+transform = Transform( 1e+18, 0, 0, 0, 1e+18, 0, 0, 0, 1e+18, 0, 0, 0 )
+
+[node name="Ellipsoid_core" parent="Background/Galactic_background" index="0"]
+material_override = ExtResource( 7 )
+
+[node name="Ellipsoid_medium" parent="Background/Galactic_background" index="1"]
+material_override = ExtResource( 8 )
+
+[node name="Ellipsoid_outer" parent="Background/Galactic_background" index="2"]
+material_override = ExtResource( 12 )
+
+[node name="Torus outer_dark" parent="Background/Galactic_background" index="3"]
+material_override = ExtResource( 13 )
+
+[node name="Torus outer_bright" parent="Background/Galactic_background" index="4"]
+material_override = ExtResource( 14 )
+
+[node name="Stars1" parent="Background/Galactic_background" index="5"]
+material/0 = ExtResource( 15 )
+
+[node name="Stars2" parent="Background/Galactic_background" index="6"]
+material_override = ExtResource( 18 )
+
+[node name="Stars3" parent="Background/Galactic_background" index="7"]
+material_override = ExtResource( 17 )
+
+[node name="Stars_belt1" parent="Background/Galactic_background" index="8"]
+material_override = ExtResource( 15 )
+
+[node name="Stars_belt2" parent="Background/Galactic_background" index="9"]
+material_override = ExtResource( 18 )
+
+[node name="Stars_belt3" parent="Background/Galactic_background" index="10"]
+material_override = ExtResource( 17 )
 
 [node name="Star_placeholders" type="Position3D" parent="."]
 transform = Transform( 0.0788588, 0.0323539, -0.0508753, -0.0221764, 0.0934562, 0.0250586, 0.0560649, -0.00854127, 0.0814712, 5.08724e+16, 5.45492e+16, -5.07095e+15 )
@@ -77,3 +126,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91366e+17, 1.3113e+16, 3.78
 
 [node name="STAR_0_ZONE4" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29765e+17, 6.85811e+16, -4.07458e+17 )
+
+[editable path="Background/Galactic_background"]

@@ -3,6 +3,7 @@
 [ext_resource path="res://Assets_new/Shaders/Light/Light_distant_sprite.gdshader" type="Shader" id=1]
 
 [resource]
+render_priority = 1
 shader = ExtResource( 1 )
 shader_param/albedo = Color( 0.458824, 0.882353, 1, 1 )
 shader_param/scale = 0.027
