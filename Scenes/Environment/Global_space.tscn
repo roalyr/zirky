@@ -57,23 +57,23 @@ visible = false
 
 [node name="Nebula_1" parent="." instance=ExtResource( 6 )]
 
+[node name="STAR_0_ZONE" parent="Nebula_1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74503e+16, -1.31722e+10, 2.41616e+16 )
+
 [node name="Nebula_2" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57148e+17, 6.70532e+15, 2.79213e+16 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02294e+17, 1.92628e+16, -1.86907e+17 )
+
+[node name="STAR_0_ZONE3" parent="Nebula_2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41425e+15, 1.09302e+15, 5.57949e+15 )
 
 [node name="Nebula_3" parent="." instance=ExtResource( 4 )]
-transform = Transform( -0.491552, -0.195503, 0.848619, 0.0489112, 0.966739, 0.251046, -0.869473, 0.164909, -0.46564, 2.76779e+17, 1.52314e+17, -3.2581e+16 )
+transform = Transform( -0.491552, -0.195503, 0.848619, 0.0489112, 0.966739, 0.251046, -0.869473, 0.164909, -0.46564, -3.88207e+17, -1.46366e+16, -1.43365e+17 )
 
 [node name="STAR_0_ZONE5" parent="Nebula_3" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29722e+16, -1.2962e+16, -1.45907e+16 )
 
-[node name="STAR_0_ZONE" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74503e+16, -1.31722e+10, 2.41616e+16 )
-
 [node name="STAR_0_ZONE2" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91366e+17, 1.3113e+16, 3.78099e+16 )
 
-[node name="STAR_0_ZONE3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46003e+17, -3.01094e+15, 2.25352e+16 )
-
 [node name="STAR_0_ZONE4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15466e+17, 2.2824e+16, 1.17096e+16 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29765e+17, 6.85811e+16, -4.07458e+17 )

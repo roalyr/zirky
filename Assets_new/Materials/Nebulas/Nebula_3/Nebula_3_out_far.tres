@@ -6,16 +6,19 @@
 [resource]
 render_priority = 1
 shader = ExtResource( 1 )
-shader_param/albedo = Color( 0.4, 0.203922, 0, 1 )
-shader_param/normal_detail_factor = 1.134
+shader_param/albedo = Color( 0.305882, 0.160784, 0, 1 )
+shader_param/albedo_out = Color( 0.211765, 0.211765, 0.196078, 1 )
+shader_param/normal_detail_factor = 1.542
 shader_param/normal_detail_power = 1.0
-shader_param/normal_detail_clamp = 15.0
-shader_param/normal_detail_rim_strength = 0.789
-shader_param/normal_detail_rim_exponent = 2.632
-shader_param/normal_detail_uv1_scale = 1.824
+shader_param/normal_detail_clamp = 1.0
+shader_param/normal_detail_rim_strength = 0.753
+shader_param/normal_detail_rim_exponent = 3.0
+shader_param/normal_detail_uv1_scale = 1.915
 shader_param/normal_detail_uv1_offset = Vector3( 0, 0, 0 )
+shader_param/out_rim_strength = 1.279
+shader_param/out_rim_exponent = 0.863
 shader_param/fade_albedo_near = 1e+17
 shader_param/fade_albedo_far = 2e+18
-shader_param/fog_power = 4.0
+shader_param/fog_power = 3.0
 shader_param/uv1_blend_sharpness = 10.0
 shader_param/normal_detail_minor_noise = ExtResource( 3 )

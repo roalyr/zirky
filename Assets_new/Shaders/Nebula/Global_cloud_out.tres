@@ -20,6 +20,7 @@ render_mode
 	depth_draw_opaque;
 
 uniform vec4 albedo : hint_color;
+uniform vec4 albedo_out : hint_color;
 
 // uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
@@ -32,6 +33,9 @@ uniform float normal_detail_rim_strength = 1.0;
 uniform float normal_detail_rim_exponent = 1.0;
 uniform float normal_detail_uv1_scale = 1.0;
 uniform vec3 normal_detail_uv1_offset = vec3(0.0);
+
+uniform float out_rim_strength = 1.0;
+uniform float out_rim_exponent = 1.0;
 
 
 uniform float fade_albedo_near = 0;
@@ -109,7 +113,8 @@ void fragment()
 
 	// Attenuate the dot product.
 	float rim_normal_detail_minor = clamp(pow(dt_normal_detail_minor, normal_detail_rim_exponent)*normal_detail_rim_strength, 1e-6, 1.0);
-
+	float rim_out = clamp(pow(dt, out_rim_exponent)*out_rim_strength, 1e-6, 1.0);
+	
 	// fade distances.
 	float dist = length(VERTEX);
 
@@ -120,7 +125,8 @@ void fragment()
 	// Main color
 	ALBEDO = albedo.rgb * COLOR.rgb * (pow(fd_albedo_near, fog_power)) * (pow(fd_albedo_far, fog_power))
 		* clamp(pow(rim_normal_detail_minor * normal_detail_factor, normal_detail_power), 0.0, normal_detail_clamp);
-   
+	ALBEDO += albedo_out.rgb * COLOR.rgb * (pow(fd_albedo_near, fog_power)) * (pow(fd_albedo_far, fog_power)) * (1.0 - rim_out) 
+		* clamp(pow(rim_normal_detail_minor * normal_detail_factor, normal_detail_power), 0.0, normal_detail_clamp);
 
 	DEPTH = 0.0;
 }

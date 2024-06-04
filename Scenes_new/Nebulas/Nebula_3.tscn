@@ -20,8 +20,8 @@ linear_damp = 0.0
 angular_damp = 0.0
 script = ExtResource( 1 )
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 7.56e+17, 0, 0, 0, 5.52e+17, 0, 0, 0, 6.02e+17, -0.0580967, 0.0230848, 0.0268611 )
+[node name="Zone_5e16" type="CollisionShape" parent="."]
+transform = Transform( 5e+16, 0, 0, 0, 5e+16, 0, 0, 0, 5e+16, -0.0580967, 0.0230848, 0.0268611 )
 shape = SubResource( 114 )
 
 [node name="Scenes" type="Spatial" parent="."]

@@ -8,9 +8,9 @@
 [resource]
 next_pass = ExtResource( 2 )
 shader = ExtResource( 1 )
-shader_param/albedo = Color( 0.490196, 0.14902, 0, 1 )
+shader_param/albedo = Color( 0.364706, 0.188235, 0.113725, 1 )
 shader_param/albedo_detail_distant = Color( 0.513726, 0.376471, 0.0784314, 1 )
-shader_param/albedo_fog = Color( 0.988235, 0.901961, 0.67451, 1 )
+shader_param/albedo_fog = Color( 0.639216, 0.603922, 0.513726, 1 )
 shader_param/normal_detail_factor = 1.0
 shader_param/normal_detail_power = -1.0
 shader_param/normal_detail_clamp = 15.0
