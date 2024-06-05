@@ -858,9 +858,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -300.0
+margin_left = -400.0
 margin_top = -100.0
-margin_right = -200.0
+margin_right = -300.0
 rect_scale = Vector2( 0.9, 0.9 )
 focus_mode = 0
 theme = ExtResource( 19 )
@@ -868,9 +868,6 @@ toggle_mode = true
 keep_pressed_outside = true
 icon = ExtResource( 15 )
 icon_align = 1
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Button_planets" type="Button" parent="Bar_nav"]
 visible = false

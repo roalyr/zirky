@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://Assets_new/Shaders/Nebula/Global_cloud_out.tres" type="Shader" id=1]
+[ext_resource path="res://Assets_new/Textures/Noise/Normal/Cloud 1 - 512x512_normal_light.png" type="Texture" id=3]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 0, 0.196078, 0.137255, 1 )
+shader_param/albedo_out = Color( 0.278431, 0.0588235, 0, 1 )
+shader_param/normal_detail_factor = 0.807
+shader_param/normal_detail_power = 5.0
+shader_param/normal_detail_clamp = 1.0
+shader_param/normal_detail_rim_strength = 1.0
+shader_param/normal_detail_rim_exponent = 0.3
+shader_param/normal_detail_uv1_scale = 3.961
+shader_param/normal_detail_uv1_offset = Vector3( 0, 0, 0 )
+shader_param/out_rim_strength = 0.734
+shader_param/out_rim_exponent = 5.0
+shader_param/fade_albedo_near = 1e+17
+shader_param/fade_albedo_far = 5e+18
+shader_param/fog_power = 10.0
+shader_param/uv1_blend_sharpness = 10.0
+shader_param/normal_detail_minor_noise = ExtResource( 3 )

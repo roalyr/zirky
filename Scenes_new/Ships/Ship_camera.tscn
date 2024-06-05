@@ -21,6 +21,9 @@ const exhaust_shape_size_xy_max = 0
 
 # Orbiting factor allows to approach not at a straight line, but slightly orbiting.
 var autopilot_orbiting_factor = 0.0
+
+func _ready():
+	PlayerState.accel_ticks_idle = idle_engine_ticks
 "
 
 [sub_resource type="CubeMesh" id=92]

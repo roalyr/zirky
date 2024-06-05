@@ -5,6 +5,7 @@ var turret_mode = false
 
 var acceleration = 0
 var accel_ticks = 0
+var accel_ticks_idle = 0 # From ship
 var ship_linear_velocity = 0
 
 var aim_target = Position3D

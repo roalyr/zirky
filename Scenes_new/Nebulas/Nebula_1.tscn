@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets_new/Materials/Nebulas/Nebula_1/Nebula_1.tres" type="Material" id=1]
 [ext_resource path="res://Assets_new/Models/Nebulas/Nebula_1.glb" type="PackedScene" id=2]
 [ext_resource path="res://Assets_new/Models/Nebulas/Nebula_1_out.glb" type="PackedScene" id=3]
 [ext_resource path="res://Assets_new/Materials/Nebulas/Nebula_1/Nebula_1_out_far.tres" type="Material" id=4]
+[ext_resource path="res://Assets_new/Models/Sprites/Star_sprite_simple.glb" type="PackedScene" id=5]
+[ext_resource path="res://Assets_new/Materials/Nebulas/Nebula_1/Nebula_1_sprite_far.tres" type="Material" id=6]
 [ext_resource path="res://Scripts/Zones/Zone_nebula_global.gd" type="Script" id=18]
 
 [sub_resource type="SphereShape" id=114]
@@ -39,16 +41,22 @@ lod_range = 1e+18
 transform = Transform( 1e+17, 0, 0, 0, 1e+17, 0, 0, 0, 1e+17, 0, 0, 0 )
 
 [node name="LOD_off_0" type="Spatial" parent="Scenes/Model_1e17_out"]
-visible = false
 
 [node name="Nebula_1_out" parent="Scenes/Model_1e17_out" instance=ExtResource( 3 )]
+visible = false
 lod_range = 1e+19
 
 [node name="Nebula_1" parent="Scenes/Model_1e17_out/Nebula_1_out" index="0"]
 material_override = ExtResource( 4 )
+
+[node name="Star_sprite_simple" parent="Scenes/Model_1e17_out/Nebula_1_out" instance=ExtResource( 5 )]
+
+[node name="Plane" parent="Scenes/Model_1e17_out/Nebula_1_out/Star_sprite_simple" index="0"]
+material_override = ExtResource( 6 )
 
 [connection signal="body_entered" from="." to="." method="_on_Zone_nebula_global_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Zone_nebula_global_body_exited"]
 
 [editable path="Scenes/Model_1e17/Nebula_1_LOD_2e17"]
 [editable path="Scenes/Model_1e17_out/Nebula_1_out"]
+[editable path="Scenes/Model_1e17_out/Nebula_1_out/Star_sprite_simple"]

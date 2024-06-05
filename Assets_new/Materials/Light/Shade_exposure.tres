@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Assets_new/Shaders/Light/Shade_exposure.gdshader" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 0.588235, 0.588235, 0.588235, 1 )
+shader_param/rim_strength = 0.1
+shader_param/rim_exponent = 5.0
+shader_param/distance_fade = 1e+11
+shader_param/distance_fade_power = 1.0
+shader_param/distance_factor = 0.5
+shader_param/alpha_clip = 1.0

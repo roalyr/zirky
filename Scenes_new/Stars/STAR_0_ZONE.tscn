@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Markers/Marker_star.gd" type="Script" id=1]
 [ext_resource path="res://Assets_new/Models/Sprites/Star_sprite_square_wide.glb" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets_new/Materials/Stars/Generic/star_sprite.tres" type="Material" id=6]
 [ext_resource path="res://Assets_new/Materials/Stars/Generic/star_corona.tres" type="Material" id=7]
 [ext_resource path="res://Scripts/Zones/Local_space_triggers_zones/Local_space_star.gd" type="Script" id=8]
+[ext_resource path="res://Assets_new/Materials/Light/Shade_exposure.tres" type="Material" id=9]
 
 [sub_resource type="SphereShape" id=79]
 
@@ -18,6 +19,8 @@ rings = 64
 
 [sub_resource type="SphereMesh" id=93]
 radial_segments = 32
+
+[sub_resource type="SphereMesh" id=100]
 
 [sub_resource type="SphereMesh" id=94]
 radial_segments = 32
@@ -59,7 +62,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-autopilot_range = 4.03e+09
+autopilot_range = 4e+09
 
 [node name="Star_sprite_square_wide" parent="Scenes/STAR_0" instance=ExtResource( 2 )]
 transform = Transform( 6.63e+08, 0, 0, 0, 6.63e+08, 0, 0, 0, 6.63e+08, 0, 0, 0 )
@@ -89,6 +92,12 @@ material_override = ExtResource( 4 )
 mesh = SubResource( 93 )
 skeleton = NodePath("../..")
 
+[node name="Shade_exposure" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD0_1e10/Halo_directional"]
+transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0 )
+mesh = SubResource( 100 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 9 )
+
 [node name="Halo_near" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD0_1e10"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 material_override = ExtResource( 5 )
@@ -109,6 +118,12 @@ material_override = ExtResource( 4 )
 mesh = SubResource( 98 )
 skeleton = NodePath("../..")
 
+[node name="Shade_exposure" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD1_1e11/Halo_directional"]
+transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0 )
+mesh = SubResource( 100 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 9 )
+
 [node name="Halo_near" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD1_1e11"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 material_override = ExtResource( 5 )
@@ -123,6 +138,12 @@ lod_range = 1e+14
 material_override = ExtResource( 4 )
 mesh = SubResource( 98 )
 skeleton = NodePath("../..")
+
+[node name="Shade_exposure" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD2_1e14/Halo_directional"]
+transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0 )
+mesh = SubResource( 100 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 9 )
 
 [connection signal="body_entered" from="." to="." method="_on_Local_space_trigger_zone_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Local_space_trigger_zone_body_exited"]

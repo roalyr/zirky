@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes_new/Stars/STAR_0_ZONE.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes_new/Nebulas/Nebula_2.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Assets_new/Materials/Galctic_background/Stars3.tres" type="Material" id=17]
 [ext_resource path="res://Assets_new/Materials/Galctic_background/Stars2.tres" type="Material" id=18]
 [ext_resource path="res://Scripts/Camera/Background.gd" type="Script" id=19]
+[ext_resource path="res://Scenes_new/Nebulas/Nebula_4.tscn" type="PackedScene" id=20]
 
 [node name="Global_space" type="Position3D"]
 script = ExtResource( 3 )
@@ -43,6 +44,7 @@ material_override = ExtResource( 8 )
 material_override = ExtResource( 12 )
 
 [node name="Torus outer_dark" parent="Background/Galactic_background" index="3"]
+visible = false
 material_override = ExtResource( 13 )
 
 [node name="Torus outer_bright" parent="Background/Galactic_background" index="4"]
@@ -67,7 +69,7 @@ material_override = ExtResource( 18 )
 material_override = ExtResource( 17 )
 
 [node name="Star_placeholders" type="Position3D" parent="."]
-transform = Transform( 0.0788588, 0.0323539, -0.0508753, -0.0221764, 0.0934562, 0.0250586, 0.0560649, -0.00854127, 0.0814712, 5.08724e+16, 5.45492e+16, -5.07095e+15 )
+transform = Transform( 0.114191, -0.0484972, -0.0693259, 0.0440453, 0.133504, -0.0208433, 0.0722362, -0.00473801, 0.122299, -7.56202e+16, 3.31031e+16, -5.12079e+16 )
 script = ExtResource( 16 )
 
 [node name="Star_placeholders_B" parent="Star_placeholders" instance=ExtResource( 11 )]
@@ -105,12 +107,16 @@ transform = Transform( 6.7812, -2.86268, -1.91984, -0.778839, 2.85477, -7.00779,
 visible = false
 
 [node name="Nebula_1" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.58076e+16, -2.57254e+16, -3.42195e+16 )
+
+[node name="STAR_0_ZONE_INIT" parent="Nebula_1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.58076e+16, 2.57254e+16, 3.42185e+16 )
 
 [node name="STAR_0_ZONE" parent="Nebula_1" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74503e+16, -1.31722e+10, 2.41616e+16 )
 
 [node name="Nebula_2" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02294e+17, 1.92628e+16, -1.86907e+17 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86967e+17, 1.86998e+17, -1.58717e+17 )
 
 [node name="STAR_0_ZONE3" parent="Nebula_2" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41425e+15, 1.09302e+15, 5.57949e+15 )
@@ -121,10 +127,10 @@ transform = Transform( -0.491552, -0.195503, 0.848619, 0.0489112, 0.966739, 0.25
 [node name="STAR_0_ZONE5" parent="Nebula_3" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29722e+16, -1.2962e+16, -1.45907e+16 )
 
-[node name="STAR_0_ZONE2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91366e+17, 1.3113e+16, 3.78099e+16 )
+[node name="Nebula_4" parent="." instance=ExtResource( 20 )]
+transform = Transform( 0.743819, 0.17059, 0.646244, 0.62989, 0.144461, -0.76313, -0.223539, 0.974695, -2.82482e-08, 1.08818e+16, 6.16765e+16, 5.28441e+17 )
 
-[node name="STAR_0_ZONE4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29765e+17, 6.85811e+16, -4.07458e+17 )
+[node name="STAR_0_ZONE2" parent="Nebula_4" instance=ExtResource( 1 )]
+transform = Transform( 0.74382, 0.629891, -0.223539, 0.17059, 0.144461, 0.974695, 0.646244, -0.763131, -2.98023e-08, 2.24689e+15, -8.01623e+15, 6.23583e+15 )
 
 [editable path="Background/Galactic_background"]

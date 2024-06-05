@@ -4,14 +4,13 @@
 [ext_resource path="res://Assets_new/Textures/Noise/Normal/Cloud 1 - 512x512_normal_light.png" type="Texture" id=3]
 
 [resource]
-render_priority = 1
 shader = ExtResource( 1 )
-shader_param/albedo = Color( 0.305882, 0.160784, 0, 1 )
-shader_param/albedo_out = Color( 0.211765, 0.211765, 0.196078, 1 )
-shader_param/normal_detail_factor = 1.542
+shader_param/albedo = Color( 0.345098, 0.176471, 0, 1 )
+shader_param/albedo_out = Color( 0.231373, 0.231373, 0.203922, 1 )
+shader_param/normal_detail_factor = 1.56
 shader_param/normal_detail_power = 1.0
 shader_param/normal_detail_clamp = 1.0
-shader_param/normal_detail_rim_strength = 0.753
+shader_param/normal_detail_rim_strength = 0.65
 shader_param/normal_detail_rim_exponent = 3.0
 shader_param/normal_detail_uv1_scale = 1.915
 shader_param/normal_detail_uv1_offset = Vector3( 0, 0, 0 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Zones/Zone_nebula_global.gd" type="Script" id=1]
 [ext_resource path="res://Assets_new/Models/Nebulas/Nebula_3.glb" type="PackedScene" id=2]
@@ -6,11 +6,30 @@
 [ext_resource path="res://Assets_new/Materials/Nebulas/Nebula_3/Nebula_3_out_far.tres" type="Material" id=4]
 [ext_resource path="res://Assets_new/Models/Nebulas/Nebula_3_out.glb" type="PackedScene" id=5]
 [ext_resource path="res://Assets_new/Materials/Nebulas/Nebula_3/Nebula_3_sprite_far.tres" type="Material" id=6]
-[ext_resource path="res://Assets_new/Models/Sprites/Star_sprite_square_wide.glb" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Models/Sprites/_Star_sprite_double_wide.glb" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Models/Sprites/_Star_sprite_double.glb" type="PackedScene" id=9]
+[ext_resource path="res://Assets_new/Materials/Nebulas/Nebula_3/Nebula_3_sprite_far_3.tres" type="Material" id=7]
+[ext_resource path="res://Assets_new/Models/Sprites/Star_sprite_double_wide.glb" type="PackedScene" id=8]
+[ext_resource path="res://Assets_new/Models/Sprites/Star_sprite_double.glb" type="PackedScene" id=9]
+[ext_resource path="res://Assets_new/Materials/Nebulas/Nebula_3/Nebula_3_sprite_far_2.tres" type="Material" id=10]
 
 [sub_resource type="SphereShape" id=114]
+
+[sub_resource type="SpatialMaterial" id=1]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="ArrayMesh" id=2]
+resource_name = "Star_sprite_double_Plane"
+surfaces/0 = {
+"aabb": AABB( -0.266596, -0.245297, 0, 0.533191, 0.490605, 1e-05 ),
+"array_data": PoolByteArray( 0, 0, 0, 0, 64, 47, 123, 62, 0, 0, 0, 0, 0, 0, 69, 34, 0, 0, 0, 255, 54, 55, 202, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 50, 255, 255, 255, 255, 0, 56, 0, 56, 43, 211, 76, 190, 168, 59, 55, 62, 0, 0, 0, 128, 0, 0, 103, 51, 0, 0, 0, 255, 109, 54, 202, 54, 59, 127, 136, 190, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 114, 69, 0, 0, 0, 255, 192, 52, 101, 55, 59, 127, 136, 190, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 114, 199, 0, 0, 0, 255, 192, 52, 101, 55, 43, 211, 76, 62, 168, 59, 55, 62, 0, 0, 0, 128, 0, 0, 153, 205, 0, 0, 0, 255, 109, 54, 202, 54, 59, 127, 136, 62, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 142, 187, 0, 0, 0, 255, 192, 52, 101, 55, 0, 0, 0, 0, 64, 47, 123, 190, 0, 0, 0, 0, 0, 0, 187, 92, 0, 0, 0, 255, 54, 55, 202, 50, 0, 0, 0, 0, 64, 47, 123, 190, 0, 0, 0, 0, 0, 0, 69, 164, 0, 0, 0, 255, 54, 55, 202, 50, 43, 211, 76, 190, 168, 59, 55, 190, 0, 0, 0, 128, 0, 0, 103, 181, 0, 0, 0, 255, 109, 54, 202, 54, 43, 211, 76, 62, 168, 59, 55, 190, 0, 0, 0, 128, 0, 0, 153, 75, 0, 0, 0, 255, 109, 54, 202, 54, 0, 0, 0, 0, 2, 172, 147, 61, 0, 0, 0, 128, 0, 0, 21, 10, 248, 248, 248, 255, 0, 56, 0, 52, 99, 126, 160, 189, 0, 0, 0, 0, 0, 0, 0, 128, 0, 0, 116, 68, 255, 255, 255, 255, 137, 53, 0, 56, 133, 255, 236, 60, 196, 3, 212, 60, 0, 0, 0, 128, 0, 0, 159, 208, 255, 255, 255, 255, 54, 55, 101, 55, 99, 126, 160, 61, 0, 0, 0, 0, 0, 0, 0, 128, 0, 0, 140, 188, 255, 255, 255, 255, 137, 53, 0, 56, 0, 0, 0, 0, 2, 172, 147, 189, 0, 0, 0, 128, 0, 0, 21, 140, 255, 255, 255, 255, 0, 56, 0, 52, 133, 255, 236, 188, 196, 3, 212, 188, 0, 0, 0, 128, 0, 0, 97, 178, 252, 252, 252, 255, 54, 55, 101, 55, 133, 255, 236, 60, 196, 3, 212, 188, 0, 0, 0, 128, 0, 0, 159, 78, 255, 255, 255, 255, 54, 55, 101, 55, 133, 255, 236, 188, 196, 3, 212, 60, 0, 0, 0, 128, 0, 0, 97, 48, 255, 255, 255, 255, 54, 55, 101, 55 ),
+"array_index_data": PoolByteArray( 9, 0, 16, 0, 8, 0, 16, 0, 9, 0, 4, 0, 16, 0, 15, 0, 8, 0, 16, 0, 4, 0, 12, 0, 16, 0, 1, 0, 15, 0, 1, 0, 16, 0, 12, 0, 17, 0, 15, 0, 1, 0, 7, 0, 15, 0, 17, 0, 10, 0, 7, 0, 17, 0, 17, 0, 6, 0, 10, 0, 14, 0, 6, 0, 17, 0, 1, 0, 14, 0, 17, 0, 13, 0, 6, 0, 14, 0, 1, 0, 13, 0, 14, 0, 13, 0, 5, 0, 6, 0, 5, 0, 13, 0, 0, 0, 13, 0, 1, 0, 11, 0, 13, 0, 11, 0, 0, 0, 18, 0, 11, 0, 1, 0, 0, 0, 11, 0, 18, 0, 1, 0, 12, 0, 18, 0, 2, 0, 0, 0, 18, 0, 12, 0, 3, 0, 18, 0, 18, 0, 3, 0, 2, 0 ),
+"blend_shape_data": [  ],
+"format": 6389023,
+"index_count": 72,
+"material": SubResource( 1 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 19
+}
 
 [node name="Nebula_3" type="Area"]
 input_ray_pickable = false
@@ -30,13 +49,13 @@ shape = SubResource( 114 )
 transform = Transform( 1e+17, 0, 0, 0, 1e+17, 0, 0, 0, 1e+17, 0, 0, 0 )
 
 [node name="Nebula_3_LOD_2e17" parent="Scenes/Model_1e17" instance=ExtResource( 2 )]
+visible = false
 lod_range = 2e+17
 
 [node name="Nebula_3" parent="Scenes/Model_1e17/Nebula_3_LOD_2e17" index="0"]
 material_override = ExtResource( 3 )
 
 [node name="LOD_off" type="Spatial" parent="Scenes/Model_1e17"]
-visible = false
 lod_range = 1e+19
 
 [node name="Model_1e17_out" type="LOD" parent="Scenes"]
@@ -44,37 +63,37 @@ transform = Transform( 1e+17, 0, 0, 0, 1e+17, 0, 0, 0, 1e+17, 0, 0, 0 )
 
 [node name="LOD_off_0" type="Spatial" parent="Scenes/Model_1e17_out"]
 transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+visible = false
 lod_range = 1.0
 
 [node name="Nebula_3_out" parent="Scenes/Model_1e17_out" instance=ExtResource( 5 )]
-visible = false
 lod_range = 1e+19
 
 [node name="Nebula_3_out" parent="Scenes/Model_1e17_out/Nebula_3_out" index="0"]
 material_override = ExtResource( 4 )
 
-[node name="Star_sprite_square_wide" parent="Scenes/Model_1e17_out/Nebula_3_out" instance=ExtResource( 7 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+[node name="Star_sprite_double" parent="Scenes/Model_1e17_out/Nebula_3_out" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
 
-[node name="Plane" parent="Scenes/Model_1e17_out/Nebula_3_out/Star_sprite_square_wide" index="0"]
-material/0 = ExtResource( 6 )
-
-[node name="_Star_sprite_double" parent="Scenes/Model_1e17_out/Nebula_3_out/Star_sprite_square_wide" instance=ExtResource( 9 )]
-
-[node name="Plane" parent="Scenes/Model_1e17_out/Nebula_3_out/Star_sprite_square_wide/_Star_sprite_double" index="0"]
+[node name="Plane" parent="Scenes/Model_1e17_out/Nebula_3_out/Star_sprite_double" index="0"]
 material_override = ExtResource( 6 )
 
-[node name="_Star_sprite_double_wide" parent="Scenes/Model_1e17_out/Nebula_3_out/Star_sprite_square_wide" instance=ExtResource( 8 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
+[node name="Star_sprite_double2" parent="Scenes/Model_1e17_out/Nebula_3_out" instance=ExtResource( 9 )]
 
-[node name="Plane" parent="Scenes/Model_1e17_out/Nebula_3_out/Star_sprite_square_wide/_Star_sprite_double_wide" index="0"]
-material_override = ExtResource( 6 )
+[node name="Plane" parent="Scenes/Model_1e17_out/Nebula_3_out/Star_sprite_double2" index="0"]
+material_override = ExtResource( 7 )
+mesh = SubResource( 2 )
+
+[node name="Star_sprite_double_wide" parent="Scenes/Model_1e17_out/Nebula_3_out" instance=ExtResource( 8 )]
+
+[node name="Plane" parent="Scenes/Model_1e17_out/Nebula_3_out/Star_sprite_double_wide" index="0"]
+material_override = ExtResource( 10 )
 
 [connection signal="body_entered" from="." to="." method="_on_Zone_nebula_global_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Zone_nebula_global_body_exited"]
 
 [editable path="Scenes/Model_1e17/Nebula_3_LOD_2e17"]
 [editable path="Scenes/Model_1e17_out/Nebula_3_out"]
-[editable path="Scenes/Model_1e17_out/Nebula_3_out/Star_sprite_square_wide"]
-[editable path="Scenes/Model_1e17_out/Nebula_3_out/Star_sprite_square_wide/_Star_sprite_double"]
-[editable path="Scenes/Model_1e17_out/Nebula_3_out/Star_sprite_square_wide/_Star_sprite_double_wide"]
+[editable path="Scenes/Model_1e17_out/Nebula_3_out/Star_sprite_double"]
+[editable path="Scenes/Model_1e17_out/Nebula_3_out/Star_sprite_double2"]
+[editable path="Scenes/Model_1e17_out/Nebula_3_out/Star_sprite_double_wide"]

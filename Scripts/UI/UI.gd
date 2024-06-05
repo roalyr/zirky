@@ -41,7 +41,7 @@ func _process(_delta):
 		ui_paths.common_readouts.apparent_velocity = " V: " + vel
 		ui_paths.common_readouts.apparent_velocity_units = units + " / s"
 		
-	ui_paths.common_readouts.accel_ticks = str(" A: ", PlayerState.accel_ticks)
+	ui_paths.common_readouts.accel_ticks = str(" A: ", PlayerState.accel_ticks - PlayerState.accel_ticks_idle)
 
 func is_language_selected(index):
 	# English

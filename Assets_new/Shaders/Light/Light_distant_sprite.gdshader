@@ -65,7 +65,6 @@ void fragment() {
 	* pulse;
 	
 	ALBEDO *= clamp(smoothstep(0.0, distance_fade_max, length(VERTEX)), 1e-6, 1.0);
-
 	//DEPTH = log2(max(1e-6, 1.0 -gl_Position_z)) * Fcoef;
 	DEPTH = 0.0;
 }

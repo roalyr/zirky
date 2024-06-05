@@ -36,6 +36,7 @@ uniform vec3 normal_detail_uv1_offset = vec3(0.0);
 uniform float distant_detail_phase = 1.0;
 uniform float distant_detail_factor = 1.0;
 uniform float distant_detail_strength = 1.0;
+uniform float distant_detail_clamp = 15.0;
 
 
 uniform float fade_detail_distant = 0;
@@ -204,7 +205,7 @@ void fragment()
 
 	// Details distant.
 	ALBEDO += albedo_detail_distant.rgb*(fd_detail_distant) * fd_detail_distant_far *COLOR.rgb
-		* pow((1.0-rim_detail_distant), distant_detail_factor)
+		*  clamp(pow((1.0-rim_detail_distant), distant_detail_factor), 0.0, distant_detail_clamp)
 		* distant_detail_strength
 		;
 
