@@ -4,14 +4,14 @@
 
 [resource]
 shader = ExtResource( 1 )
-shader_param/albedo = Color( 0.192157, 0.0666667, 0.176471, 1 )
-shader_param/scale = 3.7145
+shader_param/albedo = Color( 0.0862745, 0.0117647, 0.14902, 1 )
+shader_param/scale = 2.921
 shader_param/attenuation = 0.9265
 shader_param/flare_distance = 1.0
 shader_param/flare_size = 1.0
-shader_param/intensity = 0.532
-shader_param/exponent = 1.391
-shader_param/pulse_factor = 0.916
+shader_param/intensity = 0.71
+shader_param/exponent = 1.0
+shader_param/pulse_factor = 1.0
 shader_param/pulse_rate = 2.45
 shader_param/phase = 0.0
 shader_param/distance_fade_max = 2e+17

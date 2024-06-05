@@ -64,8 +64,13 @@ func _on_Button_ekill_pressed():
 	
 func _on_Button_hide_ui_pressed():
 
-	GameState.ui_alpha -= 0.4
-	if GameState.ui_alpha < 0.0:
+	if GameState.ui_alpha == 1.0:
+		GameState.ui_alpha = 0.5
+	elif GameState.ui_alpha == 0.5:
+		GameState.ui_alpha = 0.25
+	elif GameState.ui_alpha == 0.25:
+		GameState.ui_alpha = 0.0
+	else: 
 		GameState.ui_alpha = 1.0
 
 	ui_paths.touch_gui.modulate.a = GameState.ui_alpha
