@@ -505,7 +505,6 @@ icon = ExtResource( 7 )
 icon_align = 1
 
 [node name="Button_camera_change" type="Button" parent="Bar_menu_2"]
-visible = false
 margin_left = 40.0
 margin_top = 840.0
 margin_right = 140.0
@@ -519,9 +518,9 @@ icon_align = 1
 
 [node name="Slider_zoom" type="VSlider" parent="Bar_menu_2"]
 margin_left = 40.0
-margin_top = 390.0
+margin_top = 69.0
 margin_right = 140.0
-margin_bottom = 1020.0
+margin_bottom = 1158.0
 rect_scale = Vector2( 0.7, 0.7 )
 theme = ExtResource( 22 )
 script = SubResource( 5 )

@@ -638,9 +638,8 @@ icon = ExtResource( 7 )
 icon_align = 1
 
 [node name="Slider_zoom" type="VSlider" parent="Bar_menu_2"]
-visible = false
 margin_left = 10.0
-margin_top = 410.0
+margin_top = 63.0
 margin_right = 110.0
 margin_bottom = 740.0
 theme = ExtResource( 19 )
@@ -650,7 +649,6 @@ __meta__ = {
 }
 
 [node name="Button_camera_change" type="Button" parent="Bar_menu_2"]
-visible = false
 margin_left = 10.0
 margin_top = 750.0
 margin_right = 110.0

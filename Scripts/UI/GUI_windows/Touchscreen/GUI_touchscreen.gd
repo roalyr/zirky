@@ -275,14 +275,19 @@ func _on_Controls_area_mouse_exited():
 
 
 func _on_Button_camera_change_pressed():
-	if Paths.player.visible:
-		GameState.debug("Hide player ship model.")
-		Paths.player.hide()
-		GameState.player_hidden = true
-	else:
-		GameState.debug("Show player ship model.")		
-		Paths.player.show()
-		GameState.player_hidden = false
+	
+	Paths.environment.environment.adjustment_brightness += 0.5
+	if Paths.environment.environment.adjustment_brightness > 2.0:
+		Paths.environment.environment.adjustment_brightness = 0.5
+	
+#	if Paths.player.visible:
+#		GameState.debug("Hide player ship model.")
+#		Paths.player.hide()
+#		GameState.player_hidden = true
+#	else:
+#		GameState.debug("Show player ship model.")		
+#		Paths.player.show()
+#		GameState.player_hidden = false
 
 
 func _on_Button_debug_menu_show_toggled(button_pressed):
