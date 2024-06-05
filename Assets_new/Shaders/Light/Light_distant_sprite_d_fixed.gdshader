@@ -26,6 +26,7 @@ uniform float pulse_factor : hint_range(0.5, 1.0, 5e-4) = 1.0;
 uniform float pulse_rate : hint_range(0.0, 100.0, 5e-2) = 10;
 uniform float phase : hint_range(0.0, 3.14, 5e-4) = 0.0;
 uniform float distance_fade_max = 1e10;
+uniform float depth_value = 5e-2;
 
 // Edit "Fcoef" to adjust for desirable view distance. Lesser number means further distance limit.
 const float Fcoef = 0.001;
@@ -66,5 +67,5 @@ void fragment() {
 	
 	ALBEDO *= clamp(smoothstep(0.0, distance_fade_max, length(VERTEX)), 1e-6, 1.0);
 	//DEPTH = log2(max(1e-6, 1.0 -gl_Position_z)) * Fcoef;
-	DEPTH = 0.0;
+	DEPTH = depth_value;
 }

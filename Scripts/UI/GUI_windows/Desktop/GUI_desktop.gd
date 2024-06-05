@@ -42,7 +42,7 @@ func _on_Button_ekill_pressed():
 	
 func _on_Button_hide_ui_pressed():
 	
-	GameState.ui_alpha -= 0.33
+	GameState.ui_alpha -= 0.4
 	if GameState.ui_alpha < 0.0:
 		GameState.ui_alpha = 1.0
 		

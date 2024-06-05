@@ -43,6 +43,8 @@ uniform float fade_albedo_far = 1e19;
 
 uniform float fog_power = 1.0;
 
+uniform float depth_value = 5e-2;
+
 
 // Edit \"Fcoef\" to adjust for desirable view distance. Lesser number means further distance limit.
 const float Fcoef = 0.001;
@@ -128,6 +130,6 @@ void fragment()
 	ALBEDO += albedo_out.rgb * COLOR.rgb * (pow(fd_albedo_near, fog_power)) * (pow(fd_albedo_far, fog_power)) * (1.0 - rim_out) 
 		* clamp(pow(rim_normal_detail_minor * normal_detail_factor, normal_detail_power), 0.0, normal_detail_clamp);
 
-	DEPTH = 0.0;
+	DEPTH = depth_value;
 }
 "

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Zones/Zone_nebula_global.gd" type="Script" id=1]
 [ext_resource path="res://Assets_new/Models/Nebulas/Nebula_2.glb" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Assets_new/Models/Sprites/Star_sprite_square_wide.glb" type="PackedScene" id=7]
 [ext_resource path="res://Assets_new/Materials/Nebulas/Nebula_2/Nebula_2_sprite_far_2.tres" type="Material" id=8]
 [ext_resource path="res://Assets_new/Materials/Nebulas/Nebula_2/Nebula_2_sprite_far.tres" type="Material" id=9]
+[ext_resource path="res://Assets_new/Models/Sprites/Star_sprite_double.glb" type="PackedScene" id=10]
+[ext_resource path="res://Assets_new/Materials/Nebulas/Nebula_2/Nebula_2_sprite_far_3.tres" type="Material" id=11]
 
 [sub_resource type="SphereShape" id=114]
 
@@ -61,6 +63,11 @@ material_override = ExtResource( 8 )
 [node name="Plane" parent="Scenes/Model_1e17_out/Nebula_2_out/Star_sprite_double_wide" index="0"]
 material_override = ExtResource( 9 )
 
+[node name="Star_sprite_double" parent="Scenes/Model_1e17_out/Nebula_2_out" instance=ExtResource( 10 )]
+
+[node name="Plane" parent="Scenes/Model_1e17_out/Nebula_2_out/Star_sprite_double" index="0"]
+material_override = ExtResource( 11 )
+
 [connection signal="body_entered" from="." to="." method="_on_Zone_nebula_global_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Zone_nebula_global_body_exited"]
 
@@ -68,3 +75,4 @@ material_override = ExtResource( 9 )
 [editable path="Scenes/Model_1e17_out/Nebula_2_out"]
 [editable path="Scenes/Model_1e17_out/Nebula_2_out/Star_sprite_square_wide"]
 [editable path="Scenes/Model_1e17_out/Nebula_2_out/Star_sprite_double_wide"]
+[editable path="Scenes/Model_1e17_out/Nebula_2_out/Star_sprite_double"]

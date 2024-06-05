@@ -12,19 +12,20 @@ noise = SubResource( 1 )
 
 [resource]
 shader = ExtResource( 1 )
-shader_param/albedo = Color( 0.266667, 0.411765, 0.435294, 1 )
-shader_param/albedo_out = Color( 1, 0.596078, 0.435294, 1 )
-shader_param/normal_detail_factor = 0.086
+shader_param/albedo = Color( 0.317647, 0.52549, 0.513726, 1 )
+shader_param/albedo_out = Color( 0.984314, 0.678431, 0.411765, 1 )
+shader_param/normal_detail_factor = 0.049
 shader_param/normal_detail_power = 1.0
 shader_param/normal_detail_clamp = 15.0
-shader_param/normal_detail_rim_strength = 1.461
-shader_param/normal_detail_rim_exponent = 3.147
+shader_param/normal_detail_rim_strength = 1.72
+shader_param/normal_detail_rim_exponent = 3.165
 shader_param/normal_detail_uv1_scale = 1.158
 shader_param/normal_detail_uv1_offset = Vector3( 0, 0, 0 )
-shader_param/out_rim_strength = 1.282
-shader_param/out_rim_exponent = 1.775
+shader_param/out_rim_strength = 1.763
+shader_param/out_rim_exponent = 3.185
 shader_param/fade_albedo_near = 2e+17
 shader_param/fade_albedo_far = 3e+18
 shader_param/fog_power = 3.0
+shader_param/depth_value = 0.05
 shader_param/uv1_blend_sharpness = 10.0
 shader_param/normal_detail_minor_noise = SubResource( 2 )

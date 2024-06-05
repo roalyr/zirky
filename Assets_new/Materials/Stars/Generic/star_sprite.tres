@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
-[ext_resource path="res://Assets_new/Shaders/Light/Light_distant_sprite.gdshader" type="Shader" id=1]
+[ext_resource path="res://Assets_new/Shaders/Light/Light_distant_sprite_d_fixed.gdshader" type="Shader" id=1]
 
 [resource]
 shader = ExtResource( 1 )
@@ -15,3 +15,4 @@ shader_param/pulse_factor = 1.0
 shader_param/pulse_rate = 10.0
 shader_param/phase = 0.0
 shader_param/distance_fade_max = 5e+10
+shader_param/depth_value = 0.05

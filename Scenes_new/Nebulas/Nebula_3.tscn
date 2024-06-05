@@ -49,13 +49,13 @@ shape = SubResource( 114 )
 transform = Transform( 1e+17, 0, 0, 0, 1e+17, 0, 0, 0, 1e+17, 0, 0, 0 )
 
 [node name="Nebula_3_LOD_2e17" parent="Scenes/Model_1e17" instance=ExtResource( 2 )]
-visible = false
 lod_range = 2e+17
 
 [node name="Nebula_3" parent="Scenes/Model_1e17/Nebula_3_LOD_2e17" index="0"]
 material_override = ExtResource( 3 )
 
 [node name="LOD_off" type="Spatial" parent="Scenes/Model_1e17"]
+visible = false
 lod_range = 1e+19
 
 [node name="Model_1e17_out" type="LOD" parent="Scenes"]

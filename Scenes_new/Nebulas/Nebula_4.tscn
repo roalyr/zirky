@@ -45,10 +45,10 @@ transform = Transform( 1e+17, 0, 0, 0, 1e+17, 0, 0, 0, 1e+17, 0, 0, 0 )
 
 [node name="LOD_off_0" type="Spatial" parent="Scenes/Model_1e17_out"]
 transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+visible = false
 lod_range = 1.0
 
 [node name="Nebula_4_out" parent="Scenes/Model_1e17_out" instance=ExtResource( 3 )]
-visible = false
 lod_range = 1e+19
 
 [node name="Nebula_4" parent="Scenes/Model_1e17_out/Nebula_4_out" index="0"]

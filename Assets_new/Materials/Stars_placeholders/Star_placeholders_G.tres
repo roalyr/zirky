@@ -1,13 +1,13 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
-[ext_resource path="res://Assets_new/Shaders/Light/Light_distant_sprite.gdshader" type="Shader" id=1]
+[ext_resource path="res://Assets_new/Shaders/Light/Light_distant_sprite_d_fixed.gdshader" type="Shader" id=1]
 
 [resource]
 shader = ExtResource( 1 )
 shader_param/albedo = Color( 1, 0.980392, 0.764706, 1 )
-shader_param/scale = 0.0195
-shader_param/attenuation = 0.23
-shader_param/flare_distance = 5.95e+09
+shader_param/scale = 0.026
+shader_param/attenuation = 0.0575
+shader_param/flare_distance = 25.0
 shader_param/flare_size = 2.0
 shader_param/intensity = 0.256
 shader_param/exponent = 5.0
@@ -15,3 +15,4 @@ shader_param/pulse_factor = 0.9625
 shader_param/pulse_rate = 3.038
 shader_param/phase = 0.0
 shader_param/distance_fade_max = 1e+10
+shader_param/depth_value = 0.05

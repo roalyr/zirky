@@ -4,7 +4,7 @@
 
 [resource]
 shader = ExtResource( 1 )
-shader_param/albedo = Color( 0.588235, 0.588235, 0.588235, 1 )
+shader_param/albedo = Color( 0.713726, 0.415686, 0.101961, 1 )
 shader_param/rim_strength = 0.1
 shader_param/rim_exponent = 5.0
 shader_param/distance_fade = 1e+11

@@ -107,7 +107,7 @@ transform = Transform( 6.7812, -2.86268, -1.91984, -0.778839, 2.85477, -7.00779,
 visible = false
 
 [node name="Nebula_1" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.58076e+16, -2.57254e+16, -3.42195e+16 )
+transform = Transform( -0.801953, -0.000343638, 0.597387, 0.000603813, 0.999999, 0.00138581, -0.597387, 0.00147207, -0.801952, -4.58076e+16, -2.57254e+16, -3.42195e+16 )
 
 [node name="STAR_0_ZONE_INIT" parent="Nebula_1" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.58076e+16, 2.57254e+16, 3.42185e+16 )
@@ -131,6 +131,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29722e+16, -1.2962e+16, -1.
 transform = Transform( 0.743819, 0.17059, 0.646244, 0.62989, 0.144461, -0.76313, -0.223539, 0.974695, -2.82482e-08, 1.08818e+16, 6.16765e+16, 5.28441e+17 )
 
 [node name="STAR_0_ZONE2" parent="Nebula_4" instance=ExtResource( 1 )]
-transform = Transform( 0.74382, 0.629891, -0.223539, 0.17059, 0.144461, 0.974695, 0.646244, -0.763131, -2.98023e-08, 2.24689e+15, -8.01623e+15, 6.23583e+15 )
+transform = Transform( 0.74382, 0.629891, -0.223539, 0.17059, 0.144461, 0.974695, 0.646244, -0.763131, -1.04417e-07, -1.93504e+16, 6.7376e+15, 6.69739e+15 )
 
 [editable path="Background/Galactic_background"]
