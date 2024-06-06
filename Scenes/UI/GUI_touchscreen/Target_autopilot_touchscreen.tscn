@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Themes/Default/Theme_default.tres" type="Theme" id=1]
-[ext_resource path="res://Assets/Themes/Default/Elements/Fonts/Default_dynamicfont_0.75.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Assets/UI_images/PNG/gui_elements/bracket_autopilot.png" type="Texture" id=3]
+[ext_resource path="res://Assets_new/Themes/Default/Theme_default.tres" type="Theme" id=1]
+[ext_resource path="res://Assets_new/Themes/Default/Elements/Fonts/Default_dynamicfont_0.75.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets_new/UI_images/PNG/gui_elements/bracket_autopilot.png" type="Texture" id=3]
 
 [node name="Target_aim_touchscreen" type="Control"]
 anchor_left = 0.5

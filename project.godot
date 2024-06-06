@@ -149,7 +149,8 @@ _global_script_class_icons={
 config/name="Zirky"
 config/description="Memory"
 run/main_scene="res://Scenes/Main.tscn"
-config/icon="res://Assets/UI_images/PNG/Icon_splash/Icon.png"
+boot_splash/image="res://Assets_new/UI_images/PNG/Icon_splash/Splash.png"
+config/icon="res://Assets_new/UI_images/PNG/Icon_splash/Icon.png"
 config/windows_native_icon="res://Assets/Images/Icon.ico"
 boot_splash/minimum_display_time=3000
 
@@ -206,7 +207,7 @@ pointing/emulate_touch_from_mouse=true
 
 [locale]
 
-translations=PoolStringArray( "res://Assets/Translations/Translations.en.translation", "res://Assets/Translations/Translations.uk.translation" )
+translations=PoolStringArray( "res://Assets_new/Translations/Translations.en.translation", "res://Assets_new/Translations/Translations.uk.translation" )
 
 [physics]
 

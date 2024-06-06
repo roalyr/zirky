@@ -2,10 +2,10 @@ extends Control
 
 onready var ui_paths = get_node("/root/Main/UI_paths")
 
-var icon_velocity_1 =  load("res://Assets/UI_images/PNG/buttons/velocity_limiter_1.png")
-var icon_velocity_2 =  load("res://Assets/UI_images/PNG/buttons/velocity_limiter_2.png")
-var icon_velocity_3 =  load("res://Assets/UI_images/PNG/buttons/velocity_limiter_3.png")
-var icon_velocity_4 =  load("res://Assets/UI_images/PNG/buttons/velocity_limiter_4.png")
+var icon_velocity_1 =  load("res://Assets_new/UI_images/PNG/buttons/velocity_limiter_1.png")
+var icon_velocity_2 =  load("res://Assets_new/UI_images/PNG/buttons/velocity_limiter_2.png")
+var icon_velocity_3 =  load("res://Assets_new/UI_images/PNG/buttons/velocity_limiter_3.png")
+var icon_velocity_4 =  load("res://Assets_new/UI_images/PNG/buttons/velocity_limiter_4.png")
 
 var accel_held = false
 var deccel_held = false

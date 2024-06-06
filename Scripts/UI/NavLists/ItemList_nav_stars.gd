@@ -1,6 +1,6 @@
 extends ItemList
 
-var pad_material = load("res://Assets/Themes/Default/Elements/Panel/Default_panel_mat_shader.tres")
+var pad_material = load("res://Assets_new/Themes/Default/Elements/Panel/Default_panel_mat_shader.tres")
 
 #onready var coordinates_bank = p.common_resources.systems_coordinates_bank_1
 onready var coordinates_bank = SpaceState.markers_stars

@@ -1,33 +1,33 @@
 [gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://Assets/UI_images/PNG/buttons/touchscreen_GUI.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Themes/Default/Elements/Panel/Default_panel_mat_shader.tres" type="Material" id=2]
+[ext_resource path="res://Assets_new/UI_images/PNG/buttons/touchscreen_GUI.png" type="Texture" id=1]
+[ext_resource path="res://Assets_new/Themes/Default/Elements/Panel/Default_panel_mat_shader.tres" type="Material" id=2]
 [ext_resource path="res://Scripts/UI/GUI_windows/Common/GUI_options.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Themes/Default/Theme_default.tres" type="Theme" id=4]
-[ext_resource path="res://Assets/UI_images/PNG/buttons/desktop_GUI.png" type="Texture" id=5]
-[ext_resource path="res://Assets/UI_images/PNG/buttons/_blank_button_100px.png" type="Texture" id=6]
-[ext_resource path="res://Assets/UI_images/PNG/buttons/controls_swap.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Themes/Default/Elements/Fonts/Default_dynamicfont_0.75.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Assets_new/Themes/Default/Theme_default.tres" type="Theme" id=4]
+[ext_resource path="res://Assets_new/UI_images/PNG/buttons/desktop_GUI.png" type="Texture" id=5]
+[ext_resource path="res://Assets_new/UI_images/PNG/buttons/_blank_button_100px.png" type="Texture" id=6]
+[ext_resource path="res://Assets_new/UI_images/PNG/buttons/controls_swap.png" type="Texture" id=7]
+[ext_resource path="res://Assets_new/Themes/Default/Elements/Fonts/Default_dynamicfont_0.75.tres" type="DynamicFont" id=8]
 [ext_resource path="res://Scripts/UI/Assist/ScrollContainer_link_material.gd" type="Script" id=9]
-[ext_resource path="res://Assets/UI_images/PNG/buttons/autopilot.png" type="Texture" id=10]
-[ext_resource path="res://Assets/UI_images/PNG/buttons/turret.png" type="Texture" id=11]
-[ext_resource path="res://Assets/UI_images/PNG/buttons/ui_opacity.png" type="Texture" id=12]
-[ext_resource path="res://Assets/UI_images/PNG/buttons/options.png" type="Texture" id=13]
-[ext_resource path="res://Assets/UI_images/PNG/buttons/target.png" type="Texture" id=14]
-[ext_resource path="res://Assets/UI_images/PNG/buttons/navlist_system.png" type="Texture" id=15]
-[ext_resource path="res://Assets/UI_images/PNG/buttons/navlist_star.png" type="Texture" id=16]
-[ext_resource path="res://Assets/UI_images/PNG/buttons/navlist_constellations.png" type="Texture" id=17]
-[ext_resource path="res://Assets/UI_images/PNG/buttons/navlist_planet.png" type="Texture" id=18]
-[ext_resource path="res://Assets/UI_images/PNG/buttons/navlist_structure.png" type="Texture" id=19]
+[ext_resource path="res://Assets_new/UI_images/PNG/buttons/autopilot.png" type="Texture" id=10]
+[ext_resource path="res://Assets_new/UI_images/PNG/buttons/turret.png" type="Texture" id=11]
+[ext_resource path="res://Assets_new/UI_images/PNG/buttons/ui_opacity.png" type="Texture" id=12]
+[ext_resource path="res://Assets_new/UI_images/PNG/buttons/options.png" type="Texture" id=13]
+[ext_resource path="res://Assets_new/UI_images/PNG/buttons/target.png" type="Texture" id=14]
+[ext_resource path="res://Assets_new/UI_images/PNG/buttons/navlist_system.png" type="Texture" id=15]
+[ext_resource path="res://Assets_new/UI_images/PNG/buttons/navlist_star.png" type="Texture" id=16]
+[ext_resource path="res://Assets_new/UI_images/PNG/buttons/navlist_constellations.png" type="Texture" id=17]
+[ext_resource path="res://Assets_new/UI_images/PNG/buttons/navlist_planet.png" type="Texture" id=18]
+[ext_resource path="res://Assets_new/UI_images/PNG/buttons/navlist_structure.png" type="Texture" id=19]
 [ext_resource path="res://Scripts/UI/Assist/ItemList_link_material.gd" type="Script" id=20]
 [ext_resource path="res://Scripts/UI/Assist/Control_show.gd" type="Script" id=21]
-[ext_resource path="res://Assets/UI_images/PNG/buttons/ship.png" type="Texture" id=22]
+[ext_resource path="res://Assets_new/UI_images/PNG/buttons/ship.png" type="Texture" id=22]
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends Button
 
-var icon_untoggled =  load(\"res://Assets/UI_images/PNG/buttons/controls_swap.png\")
-var icon_toggled = load(\"res://Assets/UI_images/PNG/buttons/controls_swap_toggled.png\")
+var icon_untoggled =  load(\"res://Assets_new/UI_images/PNG/buttons/controls_swap.png\")
+var icon_toggled = load(\"res://Assets_new/UI_images/PNG/buttons/controls_swap_toggled.png\")
 
 func _on_Button_controls_swap_toggled(button_pressed):
 	if button_pressed:
