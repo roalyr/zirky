@@ -11,7 +11,7 @@ BUTTON_START,Start,Розпочати,UI buttons
 BUTTON_START_CONFIRM,Start,Розпочати,UI buttons
 BUTTON_TOUCH_GUI,Touchscreen GUI,Сенсорний ГІК,UI buttons
 BUTTON_TOUCH_SWAP_CONTROLS,Swap touch controls position,Змінити положення контролерів,UI buttons
-DESC_STAR_0,Yellow star Placeholder,Жовта зірка Тимчасовий текст,Object description
+DESC_STAR_0,Description placeholder,Тимчасовий текст,Object description
 LABEL_GUI_COLOR,GUI color,Колір ГІК,UI labels
 LABEL_GUI_COLOR_POWER,GUI color power,"Інтенсивність 
 кольору ГІК",UI labels
@@ -25,7 +25,7 @@ LABEL_INFO_TURRET_CAMERA,Camera turret (orbit) mode,Режим турелі ка
 LABEL_SCREEN_RES,3D quality,Якість 3D,UI labels
 LABEL_START_CONFIRM,Do you want to start anew?,Ви бажаєте розпочати заново?,UI labels
 LABEL_START_PROMPT,Select GUI mode depending on your device,Оберіть ГІК в залежності від вашого пристрою,UI labels
-NAME_STAR_0,Yellow star,Жовта зірка,Object name
+NAME_STAR_0,Star G0,Зірка G0,Object name
 TEST_LOCALE_LOADED,English locale successfully loaded.,Українська локалізація успішно завантажена.,misc
 DESC_NEBULA_1,Transparent Heart Nebula Placeholder,Туманність Прозорого Серця Тимчасовий текст,Object description
 NAME_NEBULA_1,Transparent Heart Nebula,Туманн. Прозорого Серця,Object name
@@ -35,3 +35,5 @@ DESC_NEBULA_3,Flaming Pillars Nebula Placeholder,Туманність Палаю
 NAME_NEBULA_3,Flaming Pillars Nebula,Туманн. Палаючих Стовпів,Object name
 DESC_NEBULA_4,Coral Clouds Nebula Placeholder,Туманність Коралових Хмар Тимчасовий текст,Object description
 NAME_NEBULA_4,Coral Clouds Nebula,Туманн. Коралових Хмар,Object name
+DESC_STAR_1,Description placeholder,Тимчасовий текст,Object description
+NAME_STAR_1,Star K7,Зірка K7,Object name

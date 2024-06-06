@@ -21,6 +21,7 @@ func init_gui():
 	
 	# Start with options window.
 	options_gui_show()
+	options_prompt_start_show()
 
 	# Hide all the gameplay elements and UI for now.
 	gameplay_gui_hide()
@@ -73,6 +74,7 @@ func switch_to_options_gui():
 	desktop_gui_hide()
 	gameplay_gui_hide()
 	options_gui_show()
+	options_prompt_start_show()
 	is_viewport_update()
 	
 	
@@ -151,7 +153,7 @@ func options_prompt_start_show():
 func options_prompt_start_confirm_hide():
 	ui_paths.options_prompt_start_confirm.hide()
 
-func options_prompt_start_confirm_show():
+func options_prompt_start_confirm_show_():
 	ui_paths.options_prompt_start_confirm.show()
 
 func desktop_gui_hide():

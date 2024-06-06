@@ -1,5 +1,5 @@
 extends Position3D
-class_name MarkerConstellations, "res://Assets/UI_images/SVG/icons/constellation_marker.svg"
+class_name MarkerConstellations, "res://Assets_new/UI_images/SVG/icons/constellation_marker.svg"
 
 export var autopilot_range = 1e16
 export var targetable = true

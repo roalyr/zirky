@@ -1,5 +1,5 @@
 extends Area
-class_name DeathZone, "res://Assets/UI_images/SVG/icons/death_zone.svg"
+class_name DeathZone, "res://Assets_new/UI_images/SVG/icons/death_zone.svg"
 
 
 func _ready():

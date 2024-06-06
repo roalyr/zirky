@@ -25,14 +25,14 @@ func unpress_buttons():
 
 # GAME START / RESUME / QUIT BUTTONS.
 func _on_Button_start_pressed():
-	if not GameState.game_started:
-		hide_tabs()
-		unpress_buttons()
+#	if not GameState.game_started:
+		#hide_tabs()
+		#unpress_buttons()
 		ui_paths.ui_functions.options_prompt_start_show()
-	else:
-		hide_tabs()
-		unpress_buttons()
-		ui_paths.ui_functions.options_prompt_start_confirm_show()
+#	else:
+#		hide_tabs()
+#		unpress_buttons()
+#		ui_paths.ui_functions.options_prompt_start_confirm_show()
 
 
 # If the game was already started.
@@ -95,12 +95,13 @@ func _on_Button_info_toggled(button_pressed):
 	if button_pressed and not ui_paths.options_tab_info.visible: 
 		hide_tabs()
 		#ui_paths.options_button_info.pressed = false
-		ui_paths.options_button_options_audio.pressed = false
-		ui_paths.options_button_options_graphic.pressed = false
-		ui_paths.options_button_options_general.pressed = false
+		#ui_paths.options_button_options_audio.pressed = false
+		#ui_paths.options_button_options_graphic.pressed = false
+		#ui_paths.options_button_options_general.pressed = false
 		ui_paths.options_tab_info.show()
 	else: 
 		ui_paths.options_tab_info.hide()
+		ui_paths.ui_functions.options_prompt_start_show()
 
 
 func _on_Button_quit_pressed():

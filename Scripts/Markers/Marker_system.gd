@@ -1,5 +1,5 @@
 extends Position3D
-class_name MarkerSystem, "res://Assets/UI_images/SVG/icons/system_marker.svg"
+class_name MarkerSystem, "res://Assets_new/UI_images/SVG/icons/system_marker.svg"
 
 export var autopilot_range = 1e14
 export var targetable = true

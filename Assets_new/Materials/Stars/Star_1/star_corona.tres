@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://Assets_new/Shaders/Star/Star_corona.gdshader" type="Shader" id=1]
+[ext_resource path="res://Assets_new/Textures/Noise/BW/Manifold 6 - 512x512.png" type="Texture" id=2]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/corona_color = Color( 0.62, 0.368073, 0.3348, 1 )
+shader_param/strength_corona = 1.242
+shader_param/exponent_corona = -0.301
+shader_param/exponent_corona_rim = 50.0
+shader_param/corona_floor_power = 5.0
+shader_param/corona_floor = 2.068
+shader_param/displacement_power = -0.0645
+shader_param/displacement_scale_xz = 1.0
+shader_param/displacement_scale_y = 1.0
+shader_param/displacement_velocity = 0.0945
+shader_param/displacement_texture = ExtResource( 2 )

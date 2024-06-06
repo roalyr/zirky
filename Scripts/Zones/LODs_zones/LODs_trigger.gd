@@ -1,5 +1,5 @@
 extends Spatial
-class_name LODs_trigger, "res://Assets/UI_images/SVG/icons/lod_icon.svg"
+class_name LODs_trigger, "res://Assets_new/UI_images/SVG/icons/lod_icon.svg"
 
 export var use_aabb_for_size = false
 

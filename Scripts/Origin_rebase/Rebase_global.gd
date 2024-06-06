@@ -1,5 +1,5 @@
 extends Position3D
-class_name RebaseGlobal, "res://Assets/UI_images/SVG/icons/rebase_global.svg"
+class_name RebaseGlobal, "res://Assets_new/UI_images/SVG/icons/rebase_global.svg"
 
 onready var rebase_limit = Constants.rebase_limit_margin
 var rebase_local = false

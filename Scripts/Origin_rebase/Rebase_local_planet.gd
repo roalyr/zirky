@@ -1,6 +1,6 @@
 extends Position3D
 
-class_name RebasePlanet, "res://Assets/UI_images/SVG/icons/rebase_planet.svg"
+class_name RebasePlanet, "res://Assets_new/UI_images/SVG/icons/rebase_planet.svg"
 
 var scenes = Position3D
 

@@ -1,5 +1,5 @@
 extends Area
-class_name ZoneNebula, "res://Assets/UI_images/SVG/icons/nebula.svg"
+class_name ZoneNebula, "res://Assets_new/UI_images/SVG/icons/nebula.svg"
 
 export var enable_environemnt_switching = false
 export var environment_switch_distance = 1e16

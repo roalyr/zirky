@@ -12,15 +12,14 @@ noise = SubResource( 1 )
 
 [resource]
 shader = ExtResource( 1 )
-shader_param/corona_color = Color( 0.901961, 0.8, 0.454902, 1 )
+shader_param/corona_color = Color( 0.847059, 0.839216, 0.219608, 1 )
 shader_param/strength_corona = 2.918
 shader_param/exponent_corona = 1.328
 shader_param/exponent_corona_rim = 10.629
 shader_param/corona_floor_power = 100.0
-shader_param/corona_floor = 1.9475
+shader_param/corona_floor = 2.403
 shader_param/displacement_power = 0.0055
 shader_param/displacement_scale_xz = 1.0
-shader_param/displacement_scale_y = 0.9805
+shader_param/displacement_scale_y = 0.9775
 shader_param/displacement_velocity = 0.006
-shader_param/dither_darken = 0.5
 shader_param/displacement_texture = SubResource( 2 )

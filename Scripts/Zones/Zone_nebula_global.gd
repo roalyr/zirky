@@ -1,5 +1,5 @@
 extends Area
-class_name ZoneNebulaGlobal, "res://Assets/UI_images/SVG/icons/nebula.svg"
+class_name ZoneNebulaGlobal, "res://Assets_new/UI_images/SVG/icons/nebula.svg"
 
 export var nebula_global_brightness_variation = 0.0
 export var nebula_global_contrast_variation = 0.0

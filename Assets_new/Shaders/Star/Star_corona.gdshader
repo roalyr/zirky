@@ -28,25 +28,12 @@ uniform float displacement_scale_xz : hint_range(0.0, 2.0, 5e-4) = 1.0;
 uniform float displacement_scale_y : hint_range(0.0, 2.0, 5e-4) = 1.0;
 uniform float displacement_velocity : hint_range(0.0, 2.0, 5e-4) = 0.5;
 
-uniform float dither_darken :  hint_range(0.5, 1.0, 5e-4) = 0.75;
-
-const float dither_x = 172.7;
-const float dither_y = 232.6;
-const float dither_r = 105.5;
-const float dither_g = 99.0;
-const float dither_b = 110.0;
 
 varying float noise_val;
 
 // Edit "Fcoef" to adjust for desirable view distance. Lesser number means further distance limit.
 const float Fcoef = 0.001;
 varying float gl_Position_z;
-
-vec3 interleaved_gradient_noise(vec2 frag_coord) {
-	vec3 dither = vec3(dot(vec2(dither_x, dither_y), frag_coord));
-	dither.rgb = fract(dither.rgb / vec3(dither_r, dither_g, dither_b));
-	return (dither.rgb - vec3(dither_darken)) / 255.0;
-}
 
 void vertex() {
 	vec2 tex_position_x = VERTEX.yz - TIME*displacement_velocity*0.1;

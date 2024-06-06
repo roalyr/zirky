@@ -1,6 +1,6 @@
 extends Position3D
 
-class_name RebaseStructure, "res://Assets/UI_images/SVG/icons/rebase_structure.svg"
+class_name RebaseStructure, "res://Assets_new/UI_images/SVG/icons/rebase_structure.svg"
 
 var scenes = Position3D
 
