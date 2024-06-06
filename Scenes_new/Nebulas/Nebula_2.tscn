@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Zones/Zone_nebula_global.gd" type="Script" id=1]
 [ext_resource path="res://Assets_new/Models/Nebulas/Nebula_2.glb" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets_new/Materials/Nebulas/Nebula_2/Nebula_2_sprite_far.tres" type="Material" id=9]
 [ext_resource path="res://Assets_new/Models/Sprites/Star_sprite_double.glb" type="PackedScene" id=10]
 [ext_resource path="res://Assets_new/Materials/Nebulas/Nebula_2/Nebula_2_sprite_far_3.tres" type="Material" id=11]
+[ext_resource path="res://Scripts/Markers/Marker_nebula.gd" type="Script" id=12]
 
 [sub_resource type="SphereShape" id=114]
 
@@ -27,6 +28,12 @@ transform = Transform( 5e+16, 0, 0, 0, 5e+16, 0, 0, 0, 5e+16, -0.0580967, 0.0230
 shape = SubResource( 114 )
 
 [node name="Scenes" type="Spatial" parent="."]
+
+[node name="MarkerNebula_2_3e16" type="Position3D" parent="Scenes"]
+script = ExtResource( 12 )
+autopilot_range = 3e+16
+translations_name = "NAME_NEBULA_2"
+translations_description = "DESC_NEBULA_2"
 
 [node name="Model_1e17" type="LOD" parent="Scenes"]
 transform = Transform( 1e+17, 0, 0, 0, 1e+17, 0, 0, 0, 1e+17, 0, 0, 0 )
@@ -45,9 +52,9 @@ lod_range = 1e+18
 transform = Transform( 1e+17, 0, 0, 0, 1e+17, 0, 0, 0, 1e+17, 0, 0, 0 )
 
 [node name="LOD_off_0" type="Spatial" parent="Scenes/Model_1e17_out"]
+visible = false
 
 [node name="Nebula_2_out" parent="Scenes/Model_1e17_out" instance=ExtResource( 4 )]
-visible = false
 lod_range = 1e+19
 
 [node name="Nebula_2" parent="Scenes/Model_1e17_out/Nebula_2_out" index="0"]

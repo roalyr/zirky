@@ -7,10 +7,29 @@ var icon_velocity_2 =  load("res://Assets/UI_images/PNG/buttons/velocity_limiter
 var icon_velocity_3 =  load("res://Assets/UI_images/PNG/buttons/velocity_limiter_3.png")
 var icon_velocity_4 =  load("res://Assets/UI_images/PNG/buttons/velocity_limiter_4.png")
 
+var accel_held = false
+var deccel_held = false
+
+var sticky_button_timer = 0
+var sticky_button_delay = 0.5
+
 func _ready():
 	# ============================= Connect signals ===========================
 	Signals.connect_checked("sig_autopilot_disable", self, "is_autopilot_disable")
 	# =========================================================================
+	
+func _process(delta):
+	
+	if sticky_button_timer <= sticky_button_delay:
+		sticky_button_timer += delta
+		return
+#	else:
+#		sticky_button_timer = 0.0
+	
+	if accel_held:
+		Signals.emit_signal("sig_accelerate", true)
+	elif deccel_held:
+		Signals.emit_signal("sig_accelerate", false)
 
 func hide_navbars():
 	ui_paths.desktop_nav_popup_constellations.hide()	
@@ -74,13 +93,22 @@ func _on_Button_turret_toggled(button_pressed):
 
 
 # DESKTOP / MOBILE GUI
-# Acceleration / decelartion
-func _on_Button_accel_plus_pressed():
+# Touchscreen controls.
+func _on_Desktop_accel_plus_pressed():
+	accel_held = true
 	Signals.emit_signal("sig_accelerate", true)
+	sticky_button_timer = 0.0
+
+func _on_Desktop_accel_plus_released():
+	accel_held = false
 	
-# DESKTOP / MOBILE GUI
-func _on_Button_accel_minus_pressed():
+func _on_Desktop_accel_minus_pressed():
+	deccel_held = true
 	Signals.emit_signal("sig_accelerate", false)
+	sticky_button_timer = 0.0
+	
+func _on_Desktop_accel_minus_released():
+	deccel_held = false	
 
 # DESKTOP / MOBILE GUI
 # Other buttons
@@ -212,10 +240,7 @@ func _on_Button_debug_toggled(button_pressed):
 
 func _on_Button_camera_change_pressed():
 	
-		
-	Paths.environment.environment.adjustment_brightness += 0.5
-	if Paths.environment.environment.adjustment_brightness > 2.0:
-		Paths.environment.environment.adjustment_brightness = 0.5
+	pass
 	
 #	if Paths.player.visible:
 #		GameState.debug("Hide player ship model.")
@@ -244,3 +269,39 @@ func _on_Button_velocity_limiter_pressed():
 	elif PlayerState.velocity_limiter == 3:
 		ui_paths.desktop_button_velocity_limiter.icon = icon_velocity_4
 		Signals.emit_signal("sig_velocity_limiter_set", 3)
+
+
+func _on_Button_brightness_2_pressed():
+	Paths.environment.environment.adjustment_brightness = 2.0
+	
+	ui_paths.desktop_brightness_1_5.pressed = false
+	ui_paths.desktop_brightness_1.pressed = false
+	ui_paths.desktop_brightness_0_5.pressed = false
+
+
+func _on_Button_brightness_1_5_pressed():
+	Paths.environment.environment.adjustment_brightness = 1.5
+	
+	ui_paths.desktop_brightness_2.pressed = false
+	ui_paths.desktop_brightness_1.pressed = false
+	ui_paths.desktop_brightness_0_5.pressed = false
+
+
+func _on_Button_brightness_1_pressed():
+	Paths.environment.environment.adjustment_brightness = 1.0
+	
+	ui_paths.desktop_brightness_1_5.pressed = false
+	ui_paths.desktop_brightness_2.pressed = false
+	ui_paths.desktop_brightness_0_5.pressed = false
+
+
+func _on_Button_brightness_0_5_pressed():
+	Paths.environment.environment.adjustment_brightness = 0.5
+	
+	ui_paths.desktop_brightness_1_5.pressed = false
+	ui_paths.desktop_brightness_1.pressed = false
+	ui_paths.desktop_brightness_2.pressed = false
+
+
+func _on_Desktop_ekill_pressed():
+		Signals.emit_signal("sig_engine_kill")

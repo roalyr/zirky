@@ -63,6 +63,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 autopilot_range = 4e+09
+translations_name = "NAME_STAR_0"
+translations_description = "DESC_STAR_0"
 
 [node name="Star_sprite_square_wide" parent="Scenes/STAR_0" instance=ExtResource( 2 )]
 transform = Transform( 6.63e+08, 0, 0, 0, 6.63e+08, 0, 0, 0, 6.63e+08, 0, 0, 0 )
@@ -74,6 +76,7 @@ material_override = ExtResource( 6 )
 transform = Transform( 6.63e+08, 0, 0, 0, 6.63e+08, 0, 0, 0, 6.63e+08, 0, 0, 0 )
 
 [node name="LOD0_1e10" type="Spatial" parent="Scenes/STAR_0/Model_663000000"]
+visible = false
 lod_range = 1e+10
 
 [node name="Surface" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD0_1e10"]
@@ -106,7 +109,6 @@ mesh = SubResource( 94 )
 skeleton = NodePath("../..")
 
 [node name="LOD1_1e11" type="Spatial" parent="Scenes/STAR_0/Model_663000000"]
-visible = false
 lod_range = 1e+11
 
 [node name="Surface" type="MeshInstance" parent="Scenes/STAR_0/Model_663000000/LOD1_1e11"]

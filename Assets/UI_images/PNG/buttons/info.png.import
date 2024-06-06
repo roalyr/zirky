@@ -2,26 +2,28 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/info.png-727399e74a8267f3eb4aa861d75f2a68.stex"
+path.s3tc="res://.import/info.png-727399e74a8267f3eb4aa861d75f2a68.s3tc.stex"
+path.etc2="res://.import/info.png-727399e74a8267f3eb4aa861d75f2a68.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/UI_images/PNG/buttons/info.png"
-dest_files=[ "res://.import/info.png-727399e74a8267f3eb4aa861d75f2a68.stex" ]
+dest_files=[ "res://.import/info.png-727399e74a8267f3eb4aa861d75f2a68.s3tc.stex", "res://.import/info.png-727399e74a8267f3eb4aa861d75f2a68.etc2.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=false
+flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true

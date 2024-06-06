@@ -49,10 +49,13 @@ onready var desktop_button_target_aim_clear = desktop_bar_control.get_node("Butt
 onready var desktop_button_autopilot = desktop_bar_control.get_node("Button_autopilot")
 # Control bar 2
 onready var desktop_bar_control_2 = desktop_gui.get_node("Bar_control_2")
-onready var desktop_button_velocity_limiter = desktop_bar_control_2.get_node("Button_velocity_limiter")
+
 # Ship bar
 onready var desktop_bar_items = desktop_gui.get_node("Bar_items")
-onready var desktop_ship_popup = desktop_bar_items.get_node("Popup_PLACEHOLDER")
+onready var desktop_brightness_2 = desktop_bar_items.get_node("Button_brightness_2")
+onready var desktop_brightness_1_5 = desktop_bar_items.get_node("Button_brightness_1_5")
+onready var desktop_brightness_1 = desktop_bar_items.get_node("Button_brightness_1")
+onready var desktop_brightness_0_5 = desktop_bar_items.get_node("Button_brightness_0_5")
 # Readings
 onready var desktop_readings = desktop_gui.get_node("Readings")
 onready var desktop_readings_info_popup = desktop_readings.get_node("Popup_info")
@@ -110,7 +113,10 @@ onready var touch_bar_control_2 = touch_gui.get_node("Bar_control_2")
 onready var touch_button_velocity_limiter = touch_bar_control_2.get_node("Button_velocity_limiter")
 # Ship bar
 onready var touch_bar_items = touch_gui.get_node("Bar_items")
-onready var touch_ship_popup = touch_bar_items.get_node("Popup_PLACEHOLDER")
+onready var touch_brightness_2 =  touch_bar_items.get_node("Button_brightness_2")
+onready var touch_brightness_1_5 = touch_bar_items.get_node("Button_brightness_1_5")
+onready var touch_brightness_1 = touch_bar_items.get_node("Button_brightness_1")
+onready var touch_brightness_0_5 = touch_bar_items.get_node("Button_brightness_0_5")
 
 
 # Control area

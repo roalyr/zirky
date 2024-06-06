@@ -84,6 +84,7 @@ func _on_ItemList_nav_item_selected(index):
 	var marker_scene = coordinates
 	Signals.emit_signal("sig_system_spawned", marker_scene)
 	Signals.emit_signal("sig_target_aim_locked", targeted_scene)
+	Signals.emit_signal("sig_fetch_object_info")
 	
 func is_system_spawned(system_scene):
 	# Save currently selected scene reference in memory

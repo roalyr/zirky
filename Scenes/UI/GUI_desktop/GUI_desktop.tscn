@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Scripts/UI/NavLists/ItemList_nav_stars.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/UI/NavLists/ItemList_nav_constellations.gd" type="Script" id=2]
@@ -22,7 +22,7 @@
 [ext_resource path="res://Scripts/UI/Assist/Referencerect_hide.gd" type="Script" id=20]
 [ext_resource path="res://Assets/Themes/Default/Elements/Panel/Default_panel_mat_shader.tres" type="Material" id=21]
 [ext_resource path="res://Assets/Themes/Default/Theme_default.tres" type="Theme" id=22]
-[ext_resource path="res://Assets/UI_images/PNG/buttons/ship.png" type="Texture" id=23]
+[ext_resource path="res://Assets/UI_images/PNG/buttons/brightness_1_5.png" type="Texture" id=23]
 [ext_resource path="res://Scripts/UI/Assist/ItemList_link_material.gd" type="Script" id=24]
 [ext_resource path="res://Scenes/UI/GUI_desktop/Target_autopilot_desktop.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Scenes/UI/GUI_desktop/Target_aim_desktop.tscn" type="PackedScene" id=26]
@@ -31,7 +31,12 @@
 [ext_resource path="res://Assets/UI_images/PNG/buttons/info.png" type="Texture" id=29]
 [ext_resource path="res://Assets/UI_images/PNG/buttons/debug.png" type="Texture" id=30]
 [ext_resource path="res://Assets/UI_images/PNG/buttons/camera.png" type="Texture" id=31]
-[ext_resource path="res://Assets/UI_images/PNG/buttons/velocity_limiter_1.png" type="Texture" id=32]
+[ext_resource path="res://Assets/UI_images/PNG/buttons/desktop_accel_new.png" type="Texture" id=32]
+[ext_resource path="res://Assets/UI_images/PNG/buttons/brightness_0_5.png" type="Texture" id=33]
+[ext_resource path="res://Assets/UI_images/PNG/buttons/brightness_2.png" type="Texture" id=34]
+[ext_resource path="res://Assets/UI_images/PNG/buttons/brightness_1.png" type="Texture" id=35]
+[ext_resource path="res://Assets/UI_images/PNG/buttons/desktop_deccel_new.png" type="Texture" id=36]
+[ext_resource path="res://Assets/UI_images/PNG/buttons/desktop_ekill.png" type="Texture" id=37]
 
 [sub_resource type="CanvasItemMaterial" id=3]
 
@@ -101,6 +106,7 @@ __meta__ = {
 }
 
 [node name="Debug_panel" type="Control" parent="Readings"]
+visible = false
 margin_left = 410.0
 margin_right = 1510.0
 margin_bottom = 380.0
@@ -375,7 +381,6 @@ clip_text = true
 [node name="Target_autopilot_desktop" parent="Readings" instance=ExtResource( 25 )]
 
 [node name="Popup_info" type="ReferenceRect" parent="Readings"]
-visible = false
 margin_left = 410.0
 margin_right = 1510.0
 margin_bottom = 380.0
@@ -384,6 +389,7 @@ border_color = Color( 0.501961, 0.501961, 0.501961, 0.501961 )
 script = ExtResource( 20 )
 
 [node name="Panel" type="Panel" parent="Readings/Popup_info"]
+visible = false
 material = ExtResource( 21 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -505,6 +511,7 @@ icon = ExtResource( 7 )
 icon_align = 1
 
 [node name="Button_camera_change" type="Button" parent="Bar_menu_2"]
+visible = false
 margin_left = 40.0
 margin_top = 840.0
 margin_right = 140.0
@@ -518,9 +525,9 @@ icon_align = 1
 
 [node name="Slider_zoom" type="VSlider" parent="Bar_menu_2"]
 margin_left = 40.0
-margin_top = 69.0
+margin_top = 130.0
 margin_right = 140.0
-margin_bottom = 1158.0
+margin_bottom = 1246.0
 rect_scale = Vector2( 0.7, 0.7 )
 theme = ExtResource( 22 )
 script = SubResource( 5 )
@@ -531,7 +538,6 @@ margin_top = 990.0
 margin_right = 340.0
 margin_bottom = 1080.0
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -571,6 +577,7 @@ icon = ExtResource( 10 )
 icon_align = 1
 
 [node name="Button_PLACEHOLDER" type="Button" parent="Bar_control"]
+visible = false
 margin_left = 170.0
 margin_top = 10.0
 margin_right = 270.0
@@ -583,13 +590,11 @@ icon = ExtResource( 18 )
 icon_align = 1
 
 [node name="Bar_control_2" type="Control" parent="."]
-visible = false
 margin_left = 1580.0
 margin_top = 990.0
 margin_right = 1830.0
 margin_bottom = 1080.0
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -603,47 +608,25 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Button_velocity_limiter" type="Button" parent="Bar_control_2"]
-margin_left = 170.0
-margin_top = 10.0
-margin_right = 270.0
-margin_bottom = 110.0
-rect_scale = Vector2( 0.7, 0.7 )
-focus_mode = 0
-theme = ExtResource( 22 )
-keep_pressed_outside = true
-icon = ExtResource( 32 )
-icon_align = 1
+[node name="Desktop_accel_plus" type="TouchScreenButton" parent="Bar_control_2"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.7, 0.7 )
+normal = ExtResource( 32 )
 
-[node name="Button_PLACEHOLDER2" type="Button" parent="Bar_control_2"]
-margin_left = 90.0
-margin_top = 10.0
-margin_right = 190.0
-margin_bottom = 110.0
-rect_scale = Vector2( 0.7, 0.7 )
-focus_mode = 0
-theme = ExtResource( 22 )
-keep_pressed_outside = true
-icon = ExtResource( 18 )
-icon_align = 1
+[node name="Desktop_accel_minus" type="TouchScreenButton" parent="Bar_control_2"]
+position = Vector2( 90, 10 )
+scale = Vector2( 0.7, 0.7 )
+normal = ExtResource( 36 )
 
-[node name="Button_PLACEHOLDER3" type="Button" parent="Bar_control_2"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 110.0
-margin_bottom = 110.0
-rect_scale = Vector2( 0.7, 0.7 )
-focus_mode = 0
-theme = ExtResource( 22 )
-keep_pressed_outside = true
-icon = ExtResource( 18 )
-icon_align = 1
+[node name="Desktop_ekill" type="TouchScreenButton" parent="Bar_control_2"]
+position = Vector2( 170, 10 )
+scale = Vector2( 0.7, 0.7 )
+normal = ExtResource( 37 )
 
 [node name="Bar_nav" type="Control" parent="."]
 margin_right = 410.0
 margin_bottom = 90.0
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -900,16 +883,15 @@ __meta__ = {
 }
 
 [node name="Bar_items" type="Control" parent="."]
-visible = false
 margin_left = 1510.0
 margin_right = 1920.0
 margin_bottom = 90.0
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 
 [node name="Panel" type="Panel" parent="Bar_items"]
+visible = false
 material = ExtResource( 21 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -931,7 +913,7 @@ keep_pressed_outside = true
 icon = ExtResource( 29 )
 icon_align = 1
 
-[node name="Button_PLACEHOLDER2" type="Button" parent="Bar_items"]
+[node name="Button_brightness_2" type="Button" parent="Bar_items"]
 margin_left = 90.0
 margin_top = 10.0
 margin_right = 190.0
@@ -941,10 +923,10 @@ focus_mode = 0
 theme = ExtResource( 22 )
 toggle_mode = true
 keep_pressed_outside = true
-icon = ExtResource( 18 )
+icon = ExtResource( 34 )
 icon_align = 1
 
-[node name="Button_PLACEHOLDER5" type="Button" parent="Bar_items"]
+[node name="Button_brightness_1_5" type="Button" parent="Bar_items"]
 margin_left = 170.0
 margin_top = 10.0
 margin_right = 270.0
@@ -954,10 +936,10 @@ focus_mode = 0
 theme = ExtResource( 22 )
 toggle_mode = true
 keep_pressed_outside = true
-icon = ExtResource( 18 )
+icon = ExtResource( 23 )
 icon_align = 1
 
-[node name="Button_PLACEHOLDER3" type="Button" parent="Bar_items"]
+[node name="Button_brightness_1" type="Button" parent="Bar_items"]
 margin_left = 250.0
 margin_top = 10.0
 margin_right = 350.0
@@ -966,11 +948,12 @@ rect_scale = Vector2( 0.7, 0.7 )
 focus_mode = 0
 theme = ExtResource( 22 )
 toggle_mode = true
+pressed = true
 keep_pressed_outside = true
-icon = ExtResource( 18 )
+icon = ExtResource( 35 )
 icon_align = 1
 
-[node name="Button_PLACEHOLDER4" type="Button" parent="Bar_items"]
+[node name="Button_brightness_0_5" type="Button" parent="Bar_items"]
 margin_left = 330.0
 margin_top = 10.0
 margin_right = 430.0
@@ -980,10 +963,11 @@ focus_mode = 0
 theme = ExtResource( 22 )
 toggle_mode = true
 keep_pressed_outside = true
-icon = ExtResource( 23 )
+icon = ExtResource( 33 )
 icon_align = 1
 
 [node name="Popup_PLACEHOLDER" type="ReferenceRect" parent="Bar_items"]
+visible = false
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1022,7 +1006,11 @@ script = ExtResource( 24 )
 [connection signal="value_changed" from="Bar_menu_2/Slider_zoom" to="." method="_on_Slider_zoom_value_changed"]
 [connection signal="toggled" from="Bar_control/Button_autopilot" to="." method="_on_Button_autopilot_toggled"]
 [connection signal="pressed" from="Bar_control/Button_target_aim_clear" to="." method="_on_Button_target_aim_clear_pressed"]
-[connection signal="pressed" from="Bar_control_2/Button_velocity_limiter" to="." method="_on_Button_velocity_limiter_pressed"]
+[connection signal="pressed" from="Bar_control_2/Desktop_accel_plus" to="." method="_on_Desktop_accel_plus_pressed"]
+[connection signal="released" from="Bar_control_2/Desktop_accel_plus" to="." method="_on_Desktop_accel_plus_released"]
+[connection signal="pressed" from="Bar_control_2/Desktop_accel_minus" to="." method="_on_Desktop_accel_minus_pressed"]
+[connection signal="released" from="Bar_control_2/Desktop_accel_minus" to="." method="_on_Desktop_accel_minus_released"]
+[connection signal="pressed" from="Bar_control_2/Desktop_ekill" to="." method="_on_Desktop_ekill_pressed"]
 [connection signal="toggled" from="Bar_nav/Button_constellations" to="." method="_on_Button_constellations_toggled"]
 [connection signal="toggled" from="Bar_nav/Button_systems" to="." method="_on_Button_systems_toggled"]
 [connection signal="toggled" from="Bar_nav/Button_stars" to="." method="_on_Button_stars_toggled"]
@@ -1039,4 +1027,7 @@ script = ExtResource( 24 )
 [connection signal="item_selected" from="Bar_nav/Popup_structures/ItemList_nav" to="Bar_nav/Popup_structures/ItemList_nav" method="_on_ItemList_nav_item_selected"]
 [connection signal="visibility_changed" from="Bar_nav/Popup_structures/ItemList_nav" to="Bar_nav/Popup_structures/ItemList_nav" method="_on_ItemList_nav_visibility_changed"]
 [connection signal="toggled" from="Bar_items/Button_info" to="." method="_on_Button_info_toggled"]
-[connection signal="toggled" from="Bar_items/Button_PLACEHOLDER4" to="." method="_on_Button_PLACEHOLDER4_toggled"]
+[connection signal="pressed" from="Bar_items/Button_brightness_2" to="." method="_on_Button_brightness_2_pressed"]
+[connection signal="pressed" from="Bar_items/Button_brightness_1_5" to="." method="_on_Button_brightness_1_5_pressed"]
+[connection signal="pressed" from="Bar_items/Button_brightness_1" to="." method="_on_Button_brightness_1_pressed"]
+[connection signal="pressed" from="Bar_items/Button_brightness_0_5" to="." method="_on_Button_brightness_0_5_pressed"]

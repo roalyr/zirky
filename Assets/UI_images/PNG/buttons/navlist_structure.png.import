@@ -2,26 +2,28 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/navlist_structure.png-fd822d24ac209ee778be71cfe66b6eb9.stex"
+path.s3tc="res://.import/navlist_structure.png-fd822d24ac209ee778be71cfe66b6eb9.s3tc.stex"
+path.etc2="res://.import/navlist_structure.png-fd822d24ac209ee778be71cfe66b6eb9.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/UI_images/PNG/buttons/navlist_structure.png"
-dest_files=[ "res://.import/navlist_structure.png-fd822d24ac209ee778be71cfe66b6eb9.stex" ]
+dest_files=[ "res://.import/navlist_structure.png-fd822d24ac209ee778be71cfe66b6eb9.s3tc.stex", "res://.import/navlist_structure.png-fd822d24ac209ee778be71cfe66b6eb9.etc2.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=false
+flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
