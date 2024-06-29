@@ -115,23 +115,23 @@ transform = Transform( -0.801953, -0.000343638, 0.597387, 0.000603813, 0.999999,
 transform = Transform( 1, -2.32831e-10, 2.98023e-08, 2.50293e-09, 1, 5.12227e-09, 2.98023e-08, 4.65661e-10, 1, -5.71622e+16, 2.576e+16, -4.16557e+13 )
 
 [node name="Nebula_2" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.26624e+17, 1.32779e+17, -5.12984e+17 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9969e+17, -2.79609e+17, -4.81593e+17 )
 
 [node name="STAR_1_ZONE" parent="Nebula_2" instance=ExtResource( 21 )]
 
 [node name="Nebula_3" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.878048, 0.225548, 0.422088, -0.173435, 0.97199, -0.158606, -0.446039, 0.0660589, 0.892572, -5.90658e+17, -2.7115e+15, 9.83294e+16 )
+transform = Transform( -0.620981, 0.0176736, 0.783626, -0.173901, 0.971724, -0.159723, -0.76429, -0.235458, -0.600348, -5.63724e+17, -4.151e+17, 1.29721e+17 )
 
 [node name="STAR_0_ZONE3" parent="Nebula_3" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29722e+16, -1.2962e+16, -1.45907e+16 )
 
 [node name="Nebula_4" parent="." instance=ExtResource( 20 )]
-transform = Transform( -0.86545, -0.0606996, 0.497303, 0.486865, 0.132178, 0.863418, -0.118141, 0.989366, -0.0848407, 3.59354e+17, -1.00134e+17, -6.07949e+17 )
+transform = Transform( -0.86545, -0.0606996, 0.497303, 0.486865, 0.132178, 0.863418, -0.118141, 0.989366, -0.0848407, 3.86288e+17, -5.12522e+17, -5.76558e+17 )
 
 [node name="STAR_0_ZONE2" parent="Nebula_4" instance=ExtResource( 1 )]
 transform = Transform( 0.74382, 0.629891, -0.223539, 0.17059, 0.144461, 0.974695, 0.646244, -0.763131, -1.04417e-07, -1.93504e+16, 6.7376e+15, 6.69739e+15 )
 
 [node name="Nebula_5_big" parent="." instance=ExtResource( 22 )]
-transform = Transform( 0.957371, 0.288486, 0.0147308, -0.284567, 0.933147, 0.219678, 0.049628, -0.214505, 0.975461, -6.22058e+17, -9.20305e+15, 8.6992e+16 )
+transform = Transform( 0.957371, 0.288486, 0.0147308, -0.284567, 0.933147, 0.219678, 0.049628, -0.214505, 0.975461, -5.95124e+17, -4.21591e+17, 1.18383e+17 )
 
 [editable path="Background/Galactic_background"]

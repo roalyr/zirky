@@ -18,7 +18,7 @@ const camera_push_visibility_velocity = 1e8
 const camera_z_near_velocity_factor = 1e-5
 # Those numbers are made to create a warp effect.
 const camera_fov_velocity_factor = 1e-1 # Larger value - effects starts earlier
-const camera_fov_derivative = 1.5 # Higher value - more fov
+const camera_fov_derivative = 0.5 # Higher value - more fov
 const camera_fov_max_delta = Constants.camera_fov_max - Constants.camera_fov
 const camera_brightness_velocity_factor = 2e-4
 const camera_brightness_derivative = 0.1

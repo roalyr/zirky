@@ -333,7 +333,8 @@ func _on_Button_debug_toggled(button_pressed):
 
 
 func _on_Button_brightness_2_pressed():
-	Paths.environment.environment.adjustment_brightness = 2.0
+	Paths.environment.environment.adjustment_brightness = 2.2
+	Paths.environment.environment.adjustment_contrast = 1.0
 	
 	ui_paths.touch_brightness_1_5.pressed = false
 	ui_paths.touch_brightness_1.pressed = false
@@ -341,7 +342,8 @@ func _on_Button_brightness_2_pressed():
 
 
 func _on_Button_brightness_1_5_pressed():
-	Paths.environment.environment.adjustment_brightness = 1.5
+	Paths.environment.environment.adjustment_brightness = 1.7
+	Paths.environment.environment.adjustment_contrast = 1.0
 	
 	ui_paths.touch_brightness_2.pressed = false
 	ui_paths.touch_brightness_1.pressed = false
@@ -350,6 +352,7 @@ func _on_Button_brightness_1_5_pressed():
 
 func _on_Button_brightness_1_pressed():
 	Paths.environment.environment.adjustment_brightness = 1.0
+	Paths.environment.environment.adjustment_contrast = 1.0
 	
 	ui_paths.touch_brightness_1_5.pressed = false
 	ui_paths.touch_brightness_2.pressed = false
@@ -357,7 +360,8 @@ func _on_Button_brightness_1_pressed():
 
 
 func _on_Button_brightness_0_5_pressed():
-	Paths.environment.environment.adjustment_brightness = 0.5
+	Paths.environment.environment.adjustment_brightness = 0.7
+	Paths.environment.environment.adjustment_contrast = 1.1
 	
 	ui_paths.touch_brightness_1_5.pressed = false
 	ui_paths.touch_brightness_1.pressed = false

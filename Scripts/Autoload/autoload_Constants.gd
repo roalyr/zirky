@@ -35,7 +35,7 @@ const maximum_systems_spawned_on_visiting = 3
 const camera_far = 9e18 # 9e18 is a safe cap.
 const camera_near = 1e-2 # base value.
 const camera_fov = 60 # Initial value.
-const camera_fov_max = 150 # Maximum value achieved when warping.
+const camera_fov_max = 100 # Maximum value achieved when warping.
 
 const camera_turret_roll_vert_limit = 70 # Deg +\-
 # Zoom out times is multiplied by minimum ship camera distance to define maximum.
