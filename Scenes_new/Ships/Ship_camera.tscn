@@ -7,7 +7,7 @@
 resource_name = "Ship_data"
 script/source = "extends Node
 
-const ship_mass = 1000
+const ship_mass = 900
 const idle_engine_ticks = 50
 
 # Turning sensitivity LEFT-RIGHT | UP-DOWN | ROLL

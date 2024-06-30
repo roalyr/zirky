@@ -21,16 +21,16 @@ shape = SubResource( 114 )
 
 [node name="Scenes" type="Spatial" parent="."]
 
-[node name="Model_3e17" type="Spatial" parent="Scenes"]
-transform = Transform( 3e+17, 0, 0, 0, 3e+17, 0, 0, 0, 3e+17, 0, 0, 0 )
+[node name="Model_4e17" type="Spatial" parent="Scenes"]
+transform = Transform( 4e+17, 0, 0, 0, 4e+17, 0, 0, 0, 4e+17, 0, 0, 0 )
 
-[node name="Nebula_5" parent="Scenes/Model_3e17" instance=ExtResource( 4 )]
+[node name="Nebula_5" parent="Scenes/Model_4e17" instance=ExtResource( 4 )]
 lod_range = 1e+19
 
-[node name="Nebula_5" parent="Scenes/Model_3e17/Nebula_5" index="0"]
+[node name="Nebula_5" parent="Scenes/Model_4e17/Nebula_5" index="0"]
 material_override = ExtResource( 3 )
 
 [connection signal="body_entered" from="." to="." method="_on_Zone_nebula_global_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Zone_nebula_global_body_exited"]
 
-[editable path="Scenes/Model_3e17/Nebula_5"]
+[editable path="Scenes/Model_4e17/Nebula_5"]
