@@ -17,7 +17,8 @@
 rings = 64
 
 [sub_resource type="SphereMesh" id=93]
-radial_segments = 32
+radial_segments = 16
+rings = 16
 
 [sub_resource type="SphereMesh" id=94]
 radial_segments = 32
@@ -34,7 +35,7 @@ rings = 16
 radial_segments = 16
 rings = 16
 
-[node name="STAR_0_ZONE" type="Area"]
+[node name="STAR_K7_1_ZONE" type="Area"]
 input_ray_pickable = false
 monitorable = false
 gravity = 0.0
@@ -54,74 +55,72 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="STAR_0_K7" type="Position3D" parent="Scenes"]
+[node name="STAR_K7_1" type="Position3D" parent="Scenes"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-autopilot_range = 4e+09
-translations_name = "NAME_STAR_1"
-translations_description = "DESC_STAR_1"
+autopilot_range = 4.96e+09
 
-[node name="Star_sprite_square_wide" parent="Scenes/STAR_0_K7" instance=ExtResource( 2 )]
-transform = Transform( 6.63e+08, 0, 0, 0, 6.63e+08, 0, 0, 0, 6.63e+08, 0, 0, 0 )
-
-[node name="Plane" parent="Scenes/STAR_0_K7/Star_sprite_square_wide" index="0"]
-material_override = ExtResource( 6 )
-
-[node name="Model_1_24e+09" type="LOD" parent="Scenes/STAR_0_K7"]
+[node name="Star_sprite_square_wide_1_24e9" parent="Scenes/STAR_K7_1" instance=ExtResource( 2 )]
 transform = Transform( 1.24e+09, 0, 0, 0, 1.24e+09, 0, 0, 0, 1.24e+09, 0, 0, 0 )
 
-[node name="LOD0_5e10" type="Spatial" parent="Scenes/STAR_0_K7/Model_1_24e+09"]
+[node name="Plane" parent="Scenes/STAR_K7_1/Star_sprite_square_wide_1_24e9" index="0"]
+material_override = ExtResource( 6 )
+
+[node name="Model_1_24e+09" type="LOD" parent="Scenes/STAR_K7_1"]
+transform = Transform( 1.24e+09, 0, 0, 0, 1.24e+09, 0, 0, 0, 1.24e+09, 0, 0, 0 )
+
+[node name="LOD0_5e10" type="Spatial" parent="Scenes/STAR_K7_1/Model_1_24e+09"]
 lod_range = 5e+10
 
-[node name="Surface" type="MeshInstance" parent="Scenes/STAR_0_K7/Model_1_24e+09/LOD0_5e10"]
+[node name="Surface" type="MeshInstance" parent="Scenes/STAR_K7_1/Model_1_24e+09/LOD0_5e10"]
 material_override = ExtResource( 7 )
 mesh = SubResource( 96 )
 skeleton = NodePath("")
 
-[node name="Corona" type="MeshInstance" parent="Scenes/STAR_0_K7/Model_1_24e+09/LOD0_5e10"]
+[node name="Corona" type="MeshInstance" parent="Scenes/STAR_K7_1/Model_1_24e+09/LOD0_5e10"]
 transform = Transform( 1.516, 0, 0, 0, 1.516, 0, 0, 0, 1.516, 0, 0, 0 )
 material_override = ExtResource( 9 )
 mesh = SubResource( 95 )
 skeleton = NodePath("../..")
 
-[node name="Halo_directional" type="MeshInstance" parent="Scenes/STAR_0_K7/Model_1_24e+09/LOD0_5e10"]
+[node name="Halo_directional" type="MeshInstance" parent="Scenes/STAR_K7_1/Model_1_24e+09/LOD0_5e10"]
 material_override = ExtResource( 10 )
 mesh = SubResource( 93 )
 skeleton = NodePath("../..")
 
-[node name="Halo_near" type="MeshInstance" parent="Scenes/STAR_0_K7/Model_1_24e+09/LOD0_5e10"]
+[node name="Halo_near" type="MeshInstance" parent="Scenes/STAR_K7_1/Model_1_24e+09/LOD0_5e10"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 material_override = ExtResource( 11 )
 mesh = SubResource( 94 )
 skeleton = NodePath("../..")
 
-[node name="LOD1_5e11" type="Spatial" parent="Scenes/STAR_0_K7/Model_1_24e+09"]
+[node name="LOD1_5e11" type="Spatial" parent="Scenes/STAR_K7_1/Model_1_24e+09"]
 visible = false
 lod_range = 5e+11
 
-[node name="Surface" type="MeshInstance" parent="Scenes/STAR_0_K7/Model_1_24e+09/LOD1_5e11"]
+[node name="Surface" type="MeshInstance" parent="Scenes/STAR_K7_1/Model_1_24e+09/LOD1_5e11"]
 material_override = ExtResource( 7 )
 mesh = SubResource( 97 )
 skeleton = NodePath("")
 
-[node name="Halo_directional" type="MeshInstance" parent="Scenes/STAR_0_K7/Model_1_24e+09/LOD1_5e11"]
+[node name="Halo_directional" type="MeshInstance" parent="Scenes/STAR_K7_1/Model_1_24e+09/LOD1_5e11"]
 material_override = ExtResource( 10 )
 mesh = SubResource( 98 )
 skeleton = NodePath("../..")
 
-[node name="Halo_near" type="MeshInstance" parent="Scenes/STAR_0_K7/Model_1_24e+09/LOD1_5e11"]
+[node name="Halo_near" type="MeshInstance" parent="Scenes/STAR_K7_1/Model_1_24e+09/LOD1_5e11"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 material_override = ExtResource( 11 )
 mesh = SubResource( 99 )
 skeleton = NodePath("../..")
 
-[node name="LOD2_far" type="Spatial" parent="Scenes/STAR_0_K7/Model_1_24e+09"]
+[node name="LOD2_far" type="Spatial" parent="Scenes/STAR_K7_1/Model_1_24e+09"]
 visible = false
 lod_range = 1e+19
 
-[node name="Halo_directional" type="MeshInstance" parent="Scenes/STAR_0_K7/Model_1_24e+09/LOD2_far"]
+[node name="Halo_directional" type="MeshInstance" parent="Scenes/STAR_K7_1/Model_1_24e+09/LOD2_far"]
 material_override = ExtResource( 10 )
 mesh = SubResource( 98 )
 skeleton = NodePath("../..")
@@ -129,4 +128,4 @@ skeleton = NodePath("../..")
 [connection signal="body_entered" from="." to="." method="_on_Local_space_trigger_zone_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Local_space_trigger_zone_body_exited"]
 
-[editable path="Scenes/STAR_0_K7/Star_sprite_square_wide"]
+[editable path="Scenes/STAR_K7_1/Star_sprite_square_wide_1_24e9"]

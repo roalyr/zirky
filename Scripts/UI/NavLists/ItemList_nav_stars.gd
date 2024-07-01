@@ -22,7 +22,7 @@ func _ready():
 	self.allow_reselect = true
 	
 	# Make sure slider fits the color theme.
-	self.get_v_scroll().set_material(pad_material)
+	#self.get_v_scroll().set_material(pad_material)
 
 # Update markers every time you open a nav list.
 func is_fetch_markers():

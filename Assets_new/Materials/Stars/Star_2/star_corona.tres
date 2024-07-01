@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://Assets_new/Shaders/Star/Star_corona.gdshader" type="Shader" id=1]
+[ext_resource path="res://Assets_new/Textures/Noise/BW/Milky 7 - 512x512.png" type="Texture" id=2]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/corona_color = Color( 0.0980392, 0.635294, 0.447059, 1 )
+shader_param/strength_corona = 3.5
+shader_param/exponent_corona = 1.7
+shader_param/exponent_corona_rim = 5.0
+shader_param/corona_floor_power = 5.0
+shader_param/corona_floor = 5.0
+shader_param/displacement_power = 0.0215
+shader_param/displacement_scale_xz = 1.0655
+shader_param/displacement_scale_y = 1.0
+shader_param/displacement_velocity = 0.0685
+shader_param/displacement_texture = ExtResource( 2 )

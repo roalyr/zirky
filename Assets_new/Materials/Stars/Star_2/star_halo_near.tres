@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Assets_new/Shaders/Light/Light_halo_simple.gdshader" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 0.0313726, 0.439216, 0.372549, 1 )
+shader_param/rim_strength = 3.757
+shader_param/rim_exponent = 13.399
+shader_param/rim_power = 1.371
+shader_param/rim_floor = 0.173
+shader_param/rim_outer_strength = 5.748
+shader_param/rim_outer_exponent = 6.79
+shader_param/alpha_clip = 1.0
+shader_param/dither_darken = 0.75

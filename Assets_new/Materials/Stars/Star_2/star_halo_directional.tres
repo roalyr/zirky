@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Assets_new/Shaders/Light/Light_halo_directional.gdshader" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 0.0352941, 0.282353, 0.254902, 1 )
+shader_param/rim_strength = 1.147
+shader_param/rim_exponent = 31.804
+shader_param/rim_power = 2.337
+shader_param/rim_floor = 0.803
+shader_param/rim_outer_strength = 0.257
+shader_param/rim_outer_exponent = 3.338
+shader_param/alpha_clip = 1.0
+shader_param/scale = 0.923
+shader_param/scale_max = 3.4605
+shader_param/beam_width_power = 1.0
+shader_param/beam_width_focus = 0.8
+shader_param/beam_dist_power = 0.4
+shader_param/fade = 1.0
+shader_param/fade_power = 1.0
+shader_param/dither_darken = 0.75

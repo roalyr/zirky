@@ -3,23 +3,24 @@
 [ext_resource path="res://Assets_new/Shaders/Star/Star_corona.gdshader" type="Shader" id=1]
 
 [sub_resource type="OpenSimplexNoise" id=1]
-octaves = 1
-period = 7.0
+period = 24.8
 
 [sub_resource type="NoiseTexture" id=2]
 seamless = true
+as_normalmap = true
+bump_strength = 15.7
 noise = SubResource( 1 )
 
 [resource]
 shader = ExtResource( 1 )
 shader_param/corona_color = Color( 0.847059, 0.839216, 0.219608, 1 )
-shader_param/strength_corona = 2.918
-shader_param/exponent_corona = 1.328
-shader_param/exponent_corona_rim = 10.629
-shader_param/corona_floor_power = 100.0
-shader_param/corona_floor = 2.403
-shader_param/displacement_power = 0.0055
-shader_param/displacement_scale_xz = 1.0
-shader_param/displacement_scale_y = 0.9775
+shader_param/strength_corona = 3.285
+shader_param/exponent_corona = 1.352
+shader_param/exponent_corona_rim = 6.18
+shader_param/corona_floor_power = 50.0
+shader_param/corona_floor = 2.636
+shader_param/displacement_power = -0.014
+shader_param/displacement_scale_xz = 0.9735
+shader_param/displacement_scale_y = 0.9135
 shader_param/displacement_velocity = 0.006
 shader_param/displacement_texture = SubResource( 2 )

@@ -13,7 +13,7 @@ const velocity_limmiter_3 = 1e12
 const velocity_limmiter_4 = 1e16
 
 
-const accel_max = 1e19
+const accel_max = 5e19
 
 const engine_delay_time_base = 0.05
 # const engine_delay_lag_factor = 1
@@ -28,8 +28,8 @@ const autopilot_angle_deviation = 0.8
 
 # Lesser is more precise, aim at ration 1:2 for decel being larger
 # Higher numbers mean more agressive AP velocity handling.
-const autopilot_accel_factor = 0.22 # 0.22
-const autopilot_deccel_factor = 0.44 # 0.44
+const autopilot_accel_factor = 0.2 # 0.22
+const autopilot_deccel_factor = 0.4 # 0.44
 
 # Orbiting factor allows to approach not at a straight line, but slightly orbiting.
 var autopilot_orbiting_factor = 0.0

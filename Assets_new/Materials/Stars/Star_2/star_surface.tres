@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[ext_resource path="res://Assets_new/Shaders/Star/Star_surface.gdshader" type="Shader" id=1]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+persistence = 1.0
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=2]
+seamless = true
+as_normalmap = true
+bump_strength = 3.9
+noise = SubResource( 1 )
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/rim_color = Color( 0, 1, 0.623529, 1 )
+shader_param/overlay_color = Color( 0.0392157, 0.615686, 0.411765, 1 )
+shader_param/surface_color = Color( 0, 0.980392, 0.705882, 1 )
+shader_param/fade_color = Color( 0.054902, 1, 0.733333, 1 )
+shader_param/major_phase = 2.404
+shader_param/major_detail_intensity = 2.894
+shader_param/detail_decay_distance = 2e+10
+shader_param/detail_decay_power = 2.0
+shader_param/major_detail_scale = 1.0
+shader_param/major_detail_flow = 0.004
+shader_param/rim_strength = 0.978
+shader_param/rim_exponent = 0.138
+shader_param/rim_intensity = 4.979
+shader_param/major_detail_noise = SubResource( 2 )
